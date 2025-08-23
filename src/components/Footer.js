@@ -1,5 +1,6 @@
 import React from 'react';
-
+ 
+import { CiFaceSmile } from "react-icons/ci";
 const Footer = () => {
   const quickLinks = [
     { name: 'Home', href: '#home' },
@@ -10,11 +11,11 @@ const Footer = () => {
   ];
 
   const subjects = [
+    { name: 'Tamil', href: '#tamil' },
     { name: 'Mathematics', href: '#math' },
-    { name: 'Science', href: '#science' },
     { name: 'English', href: '#english' },
+    { name: 'Science', href: '#science' },
     { name: 'Social Studies', href: '#social' },
-    { name: 'Computer Science', href: '#computer' }
   ];
 
   const resources = [
@@ -199,20 +200,22 @@ const Footer = () => {
               </ul>
               
               {/* Newsletter Signup */}
-              <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <h5 className="font-bold mb-3">Stay Updated</h5>
-                <p className="text-gray-300 text-sm mb-4">Get latest updates on courses and offers</p>
-                <div className="flex space-x-2">
+              {/* <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                <div className="text-center">
+                  <h5 className="font-bold mb-2 text-white">Stay Updated</h5>
+                  <p className="text-gray-300 text-sm mb-6">Get latest updates on courses and offers</p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
                   <input 
                     type="email" 
-                    placeholder="Your email" 
-                    className="flex-1 px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                    placeholder="Enter your email address" 
+                    className="flex-1 px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
                   />
-                  <button className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 rounded-lg font-medium hover:from-yellow-300 hover:to-orange-400 transition-all duration-300">
+                  <button className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 rounded-lg font-semibold hover:from-yellow-300 hover:to-orange-400 transition-all duration-300 whitespace-nowrap">
                     Subscribe
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -238,7 +241,7 @@ const Footer = () => {
             </div>
 
             {/* Awards & Certifications */}
-            <div className="text-center lg:text-right">
+            {/* <div className="text-center lg:text-right">
               <h4 className="text-lg font-bold mb-4">Trusted & Certified</h4>
               <div className="flex justify-center lg:justify-end space-x-6">
                 <div className="text-center">
@@ -268,7 +271,7 @@ const Footer = () => {
                   <p className="text-xs font-medium">Verified</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -287,9 +290,11 @@ const Footer = () => {
               <span className="text-gray-400 text-sm">Powered by</span>
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-900 font-bold text-xs">AC</span>
+                  <span className="text-gray-900 font-bold text-md">
+                    <CiFaceSmile className="text-xl"/>
+                  </span>
                 </div>
-                <span className="text-white font-medium text-sm">Excellence</span>
+                <span className="text-white font-medium text-sm">Truelyzer</span>
               </div>
             </div>
           </div>

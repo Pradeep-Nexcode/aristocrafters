@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { GiProgression } from "react-icons/gi";
 const LearningApproachSection = () => {
   const steps = [
     {
@@ -55,9 +55,9 @@ const LearningApproachSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
-            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-            Our Process
+          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-md font-medium mb-4">
+            {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> */}
+           <GiProgression className="mr-2"/> Our Process
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             How We Make
@@ -165,9 +165,8 @@ const LearningApproachSection = () => {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="mt-20 text-center">
+        {/* <div className="mt-20 text-center">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
-            {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-4 right-4 w-24 h-24 border border-white rounded-full"></div>
               <div className="absolute bottom-4 left-4 w-32 h-32 border border-white rounded-full"></div>
@@ -191,7 +190,7 @@ const LearningApproachSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   /* Primary Colors */
@@ -65,8 +64,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins);
+  --font-nunito: var(--font-nunito);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -77,18 +76,25 @@
     --muted-foreground: #9ca3af;
   }
 }
-
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-nunito), sans-serif;
 }
 
 /* Custom Utility Classes */
 @layer utilities {
+
+   /* === FONT UTILITIES === */
+  .font-nunito {
+    font-family: var(--font-nunito), sans-serif;
+  }
+
+  .font-poppins {
+    font-family: var(--font-poppins), sans-serif;
+  }
   .text-balance {
     text-wrap: balance;
   }
@@ -115,4 +121,6 @@ body {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
   }
+
+
 }

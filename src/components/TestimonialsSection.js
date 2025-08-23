@@ -1,3 +1,6 @@
+import { TbBrandStorytel } from "react-icons/tb";
+
+
 const TestimonialsSection = () => {
   const testimonials = [
     {
@@ -62,12 +65,29 @@ const TestimonialsSection = () => {
     }
   ];
 
-  const stats = [
-    { number: "50K+", label: "Happy Students", icon: "👨‍🎓" },
-    { number: "98%", label: "Success Rate", icon: "🎯" },
-    { number: "500+", label: "Expert Tutors", icon: "👨‍🏫" },
-    { number: "24/7", label: "Support Available", icon: "🕐" }
-  ];
+const stats = [
+  {
+    icon: "🎯",
+    number: "5–10",
+    label: "Grade Levels"
+  },
+  {
+    icon: "📚",
+    number: "All Subjects",
+    label: "Covered"
+  },
+  {
+    icon: "👩‍🏫",
+    number: "Qualified",
+    label: "Expert Tutors"
+  },
+  {
+    icon: "⚡",
+    number: "Personalized",
+    label: "Learning Plans"
+  }
+];
+
 
   const renderStars = (rating) => {
     return [...Array(5)].map((_, index) => (
@@ -93,8 +113,9 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
-            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-md font-medium mb-4">
+            {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> */}
+            <TbBrandStorytel className="mr-2" />
             Success Stories
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -179,7 +200,7 @@ const TestimonialsSection = () => {
                   <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
                   </div>
-                  <div className="text-4xl lg:text-5xl font-bold mb-2">
+                  <div className="text-3xl lg:text-4xl font-bold mb-2">
                     {stat.number}
                   </div>
                   <div className="text-lg opacity-80">
@@ -190,16 +211,16 @@ const TestimonialsSection = () => {
             </div>
             
             {/* CTA */}
-            <div className="text-center">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                  Read More Reviews
-                </button>
-                <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                  Share Your Story
-                </button>
-              </div>
-            </div>
+              {/* <div className="text-center">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Read More Reviews
+                  </button>
+                  <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                    Share Your Story
+                  </button>
+                </div>
+              </div> */}
           </div>
         </div>
       </div>

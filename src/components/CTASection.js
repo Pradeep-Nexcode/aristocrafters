@@ -2,30 +2,30 @@ const CTASection = () => {
   const benefits = [
     {
       icon: "🎯",
-      title: "Free Assessment",
-      description: "Comprehensive evaluation of your child's learning needs"
+      title: "Expert Tutors",
+      description: "Qualified teachers with proven track records"
     },
     {
-      icon: "💰",
-      title: "No Hidden Costs",
-      description: "Transparent pricing with flexible payment options"
+      icon: "💻",
+      title: "100% Online",
+      description: "Learn from anywhere with flexible scheduling"
     },
     {
-      icon: "🕐",
-      title: "Flexible Schedule",
-      description: "Choose timings that work best for your family"
+      icon: "👥",
+      title: "Small Batches",
+      description: "Personal attention in groups of 5-10 students"
     },
     {
-      icon: "✅",
-      title: "Satisfaction Guarantee",
-      description: "100% money-back guarantee if not satisfied"
+      icon: "📊",
+      title: "Progress Tracking",
+      description: "Regular assessments and detailed reports"
     }
   ];
 
   const urgencyPoints = [
-    "Limited slots available for this month",
-    "Early bird discount expires soon",
-    "Join 50,000+ successful students"
+    "Limited seats available for new batches",
+    "Free demo class for first-time students",
+    "Join thousands of successful students"
   ];
 
   return (
@@ -52,20 +52,20 @@ const CTASection = () => {
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
               <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2 animate-pulse"></span>
-              Limited Time Offer
+              Join Aristocrafters Today
             </div>
             
             {/* Main Headline */}
             <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Transform Your Child&apos;s
+              Ready to Excel in
               <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                Academic Future Today
+                Your Academic Journey?
               </span>
             </h2>
             
             <p className="text-xl lg:text-2xl mb-8 opacity-90 max-w-4xl mx-auto leading-relaxed">
-              Join thousands of students who have achieved remarkable academic success with our proven personalized tutoring approach. 
-              <span className="block mt-2 font-semibold text-yellow-300">Book your FREE assessment session now!</span>
+              Join Aristocrafters and experience personalized learning that makes a difference. 
+              <span className="block mt-2 font-semibold text-yellow-300">Start your success story today!</span>
             </p>
 
             {/* Urgency Points */}
@@ -83,20 +83,20 @@ const CTASection = () => {
               <button className="group px-10 py-5 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 rounded-2xl font-bold text-lg hover:from-yellow-300 hover:to-orange-400 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 relative overflow-hidden">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 <div className="relative flex items-center justify-center gap-3">
-                  <span className="text-2xl">🚀</span>
+                  <span className="text-2xl">👨‍🎓</span>
                   <div>
-                    <div>Book FREE Assessment</div>
-                    <div className="text-sm opacity-80">Available Today</div>
+                    <div>Register as a Student</div>
+                    <div className="text-sm opacity-80">Start Learning Today</div>
                   </div>
                 </div>
               </button>
               
               <button className="group px-10 py-5 border-3 border-white text-white rounded-2xl font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 relative overflow-hidden">
                 <div className="relative flex items-center justify-center gap-3">
-                  <span className="text-2xl">📞</span>
+                  <span className="text-2xl">👨‍🏫</span>
                   <div>
-                    <div>Call Now: +91-9876543210</div>
-                    <div className="text-sm opacity-80">Speak to Expert</div>
+                    <div>Apply as a Teacher</div>
+                    <div className="text-sm opacity-80">Join Our Team</div>
                   </div>
                 </div>
               </button>

@@ -1,48 +1,50 @@
+
+import { FaPeopleGroup } from "react-icons/fa6";
 const WhyChooseUsSection = () => {
-  const benefits = [
-    {
-      icon: "👨‍🏫",
-      title: "Expert Tutors",
-      description: "Qualified teachers with 5+ years experience and proven track records in student success",
-      color: "blue",
-      stat: "500+ Tutors"
-    },
-    {
-      icon: "🎯",
-      title: "Personalized Learning",
-      description: "Customized learning plans and one-on-one attention tailored to each student's pace",
-      color: "green",
-      stat: "1:1 Ratio"
-    },
-    {
-      icon: "📱",
-      title: "Interactive Platform",
-      description: "Modern learning tools with virtual whiteboards, screen sharing, and multimedia content",
-      color: "purple",
-      stat: "24/7 Access"
-    },
-    {
-      icon: "📊",
-      title: "Progress Tracking",
-      description: "Real-time performance analytics and detailed progress reports for students and parents",
-      color: "orange",
-      stat: "Weekly Reports"
-    },
-    {
-      icon: "🕐",
-      title: "Flexible Scheduling",
-      description: "Choose your preferred time slots and reschedule classes as per your convenience",
-      color: "indigo",
-      stat: "Anytime"
-    },
-    {
-      icon: "💰",
-      title: "Affordable Pricing",
-      description: "Quality education at competitive rates with flexible payment plans and no hidden costs",
-      color: "red",
-      stat: "Best Value"
-    }
-  ];
+const benefits = [
+  {
+    icon: "✨",
+    title: "Experienced Tutors",
+    description: "Experienced tutors who simplify complex topics and make learning engaging",
+    color: "blue",
+    stat: "Expert Teachers"
+  },
+  {
+    icon: "💻",
+    title: "Online Tuition Available",
+    description: "Learn from the comfort of your home with our flexible online classes",
+    color: "green",
+    stat: "100% Online"
+  },
+  {
+    icon: "🎯",
+    title: "Customized Learning Plans",
+    description: "Personalized learning plans tailored for each student&apos;s unique needs",
+    color: "purple",
+    stat: "Individual Focus"
+  },
+  {
+    icon: "📊",
+    title: "Regular Assessments",
+    description: "Regular assessments & progress reports to track student improvement",
+    color: "orange",
+    stat: "Progress Reports"
+  },
+  {
+    icon: "🎓",
+    title: "Exam Preparation",
+    description: "Focus on exam preparation & scoring high marks in all subjects",
+    color: "indigo",
+    stat: "High Scores"
+  },
+  {
+    icon: "🌐",
+    title: "Interactive Learning",
+    description: "Engaging quizzes, activities, and discussions to make learning fun and effective",
+    color: "red",
+    stat: "Fun Learning"
+  }
+];
 
   const getColorClasses = (color) => {
     const colors = {
@@ -65,8 +67,9 @@ const WhyChooseUsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
-            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-md font-medium mb-4">
+            {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> */}
+            <FaPeopleGroup className="mr-2"/>
             Why Choose Us
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -79,7 +82,7 @@ const WhyChooseUsSection = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => {
             const colorClasses = getColorClasses(benefit.color);
             return (
@@ -107,8 +110,7 @@ const WhyChooseUsSection = () => {
         </div>
 
         {/* Bottom Stats Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
-          {/* Background Pattern */}
+        {/* <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-4 right-4 w-32 h-32 border border-white rounded-full"></div>
             <div className="absolute bottom-4 left-4 w-24 h-24 border border-white rounded-full"></div>
@@ -125,7 +127,6 @@ const WhyChooseUsSection = () => {
               </p>
             </div>
             
-            {/* Stats Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-4xl lg:text-5xl font-bold mb-2">50K+</div>
@@ -145,14 +146,13 @@ const WhyChooseUsSection = () => {
               </div>
             </div>
             
-            {/* CTA */}
             <div className="text-center mt-12">
               <button className="px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 Start Your Free Trial Today
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
