@@ -41,6 +41,17 @@ const SubjectsSection = () => {
       message: ''
     });
   };
+
+  // Form validation function
+  const isFormValid = () => {
+    return (
+      formData.name.trim() !== '' &&
+      formData.email.trim() !== '' &&
+      formData.phone.trim() !== '' &&
+      formData.subject.trim() !== '' &&
+      formData.grade !== ''
+    );
+  };
   const subjects = [
     {
       name: "Tamil",
@@ -459,7 +470,8 @@ const SubjectsSection = () => {
               </button>
               <button
                 type="submit"
-                className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                disabled={!isFormValid()}
+                className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
               >
                 <FaPaperPlane className="text-sm" />
                 Send Request

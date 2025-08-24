@@ -90,7 +90,7 @@ return (
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium">+91-9876543210</p>
+                    <p className="font-medium">+91 96778 93974</p>
                     <p className="text-gray-400 text-sm">Call us anytime</p>
                   </div>
                 </div>

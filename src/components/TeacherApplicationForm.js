@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaChalkboardTeacher } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import Modal from './Modal';
 
 const TeacherApplicationForm = ({ isOpen, onClose }) => {
@@ -78,11 +79,49 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
+    try {
+      // EmailJS configuration
+      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+      const templateId = 'teacher_template'; // Replace with your teacher template ID
+      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+      
+      // Prepare template parameters
+      const templateParams = {
+        to_name: 'Aristocrafters HR Team',
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone: formData.phone,
+        subjects: formData.subjects.join(', '),
+        classes: formData.classes.join(', '),
+        experience: formData.experience,
+        mode: formData.mode,
+        resume_attached: formData.resume ? 'Yes - ' + formData.resume.name : 'No resume uploaded',
+        reply_to: formData.email
+      };
+      
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      setIsSubmitting(false);
+      setSubmitted(true);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setIsSubmitting(false);
+      alert('There was an error sending your application. Please try again or contact us directly.');
+    }
+  };
+
+  // Form validation function
+  const isFormValid = () => {
+    return (
+      formData.fullName.trim() !== '' &&
+      formData.email.trim() !== '' &&
+      formData.phone.trim() !== '' &&
+      formData.subjects.length > 0 &&
+      formData.classes.length > 0 &&
+      formData.experience !== '' &&
+      formData.mode !== ''
+    );
   };
 
   if (submitted) {
@@ -289,7 +328,7 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
               <div className="text-center pt-6">
                 <button
                   type="submit"
-                  disabled={isSubmitting || formData.subjects.length === 0 || formData.classes.length === 0}
+                  disabled={isSubmitting || !isFormValid()}
                   className="px-12 py-4 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   {isSubmitting ? (
