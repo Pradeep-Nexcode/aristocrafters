@@ -79,7 +79,7 @@ const HeroSection = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="w-auto flex flex-col sm:flex-row gap-4">
+              <div className="w-auto flex gap-4">
                 <button
                   onClick={() => setIsStudentModalOpen(true)}
                   className="w-auto group relative px-10 py-4  cursor-pointer bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-nunito"
