@@ -75,7 +75,7 @@ const ClassFormatsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="myPadY bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full translate-y-[-50%] translate-x-[50%] opacity-20"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-100 rounded-full translate-y-[50%] translate-x-[-50%] opacity-20"></div>

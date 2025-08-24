@@ -68,11 +68,12 @@ const HeroSection = () => {
                 
                 >
                   <FaGraduationCap className="text-lg" />
-                  Join as Student
+                 Enroll Now
+
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              <button
+              {/* <button
                   onClick={() => setIsTeacherModalOpen(true)}
               
               className="px-10 py-4 border-2 cursor-pointer border-gray-300 text-gray-700 rounded-2xl font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300 bg-white/80 backdrop-blur-sm font-nunito">
@@ -80,24 +81,24 @@ const HeroSection = () => {
                   <FaBookOpen className="text-lg" />
                   Join as Teacher
                 </span>
-              </button>
+              </button> */}
             </div>
             
             {/* Highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 text-sm">
-              <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/50 rounded-xl backdrop-blur-sm">
+              <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/100 rounded-xl backdrop-blur-sm">
                 <FaCheckCircle className="text-green-500 text-lg flex-shrink-0" />
                 <span className="font-nunito font-medium">Experienced & Passionate Tutors</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/50 rounded-xl backdrop-blur-sm">
+              <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/100 rounded-xl backdrop-blur-sm">
                 <FaCheckCircle className="text-green-500 text-lg flex-shrink-0" />
                 <span className="font-nunito font-medium">Covers School Curriculum (State, CBSE, ICSE)</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/50 rounded-xl backdrop-blur-sm">
+              <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/100 rounded-xl backdrop-blur-sm">
                 <FaClock className="text-blue-500 text-lg flex-shrink-0" />
                 <span className="font-nunito font-medium">Flexible Online Classes</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/50 rounded-xl backdrop-blur-sm">
+              <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/100 rounded-xl backdrop-blur-sm">
                 <FaUsers className="text-purple-500 text-lg flex-shrink-0" />
                 <span className="font-nunito font-medium">Small Batches for Personal Attention</span>
               </div>
