@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaUserGraduate } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import Modal from './Modal';
 
 const StudentRegistrationForm = ({ isOpen, onClose }) => {
@@ -62,11 +63,47 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
+    try {
+      // EmailJS configuration
+      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+      const templateId = 'student_template'; // Replace with your student template ID
+      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+      
+      // Prepare template parameters
+      const templateParams = {
+        to_name: 'Aristocrafters Team',
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone: formData.phone,
+        grade: formData.grade,
+        subjects: formData.subjects.join(', '),
+        timing: formData.timing,
+        notes: formData.notes || 'No additional notes provided',
+        reply_to: formData.email
+      };
+      
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      setIsSubmitting(false);
+      setSubmitted(true);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setIsSubmitting(false);
+      alert('There was an error sending your registration. Please try again or contact us directly.');
+    }
+  };
+
+  // Form validation function
+  const isFormValid = () => {
+    return (
+      formData.fullName.trim() !== '' &&
+      formData.email.trim() !== '' &&
+      formData.phone.trim() !== '' &&
+      formData.grade !== '' &&
+      formData.subjects.length > 0 &&
+      formData.timing !== ''
+    );
   };
 
   if (submitted) {
@@ -241,7 +278,7 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
               <div className="text-center pt-6">
                 <button
                   type="submit"
-                  disabled={isSubmitting || formData.subjects.length === 0}
+                  disabled={isSubmitting || !isFormValid()}
                   className="px-12 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   {isSubmitting ? (
