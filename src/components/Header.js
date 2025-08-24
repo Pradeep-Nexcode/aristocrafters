@@ -1,8 +1,8 @@
-'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
-import StudentRegistrationForm from './StudentRegistrationForm';
-import TeacherApplicationForm from './TeacherApplicationForm';
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import StudentRegistrationForm from "./StudentRegistrationForm";
+import TeacherApplicationForm from "./TeacherApplicationForm";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,12 +10,12 @@ const Header = () => {
   const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
 
   const navigationItems = [
-    { name: 'Home', href: '/', icon: '🏠' },
-    { name: 'About', href: '/about', icon: '📖' },
+    { name: "Home", href: "/", icon: "🏠" },
+    { name: "About", href: "/about", icon: "📖" },
     // { name: 'Courses', href: '/courses', icon: '📚' },
     // { name: 'Why Choose Us', href: '/#why-choose-us', icon: '⭐' },
     // { name: 'Testimonials', href: '/#testimonials', icon: '💬' },
-    { name: 'Contact', href: '/contact', icon: '📞' }
+    { name: "Contact", href: "/contact", icon: "📞" },
   ];
 
   return (
@@ -24,19 +24,15 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-3 cursor-pointer">
               <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AC</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-black">
-                  AristoCrafters
-                </h1>
-                <p className="text-sm text-gray-600">
-                  Excellence in Education
-                </p>
+                <h1 className="text-xl font-bold text-black">AristoCrafters</h1>
+                <p className="text-sm text-gray-600">Excellence in Education</p>
               </div>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
@@ -54,27 +50,31 @@ const Header = () => {
             {/* Contact Info & CTA */}
             <div className="hidden lg:flex items-center space-x-6">
               {/* Phone Number */}
-              {/* <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center space-x-2">
+                <svg
+                  className="w-4 h-4 text-black"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
                 <span className="text-black font-medium">+91-9876543210</span>
-              </div> */}
+              </div>
 
               {/* CTA Buttons */}
               <div className="flex gap-3">
-                <button 
+                <button
                   onClick={() => setIsStudentModalOpen(true)}
-                  className="bg-blue-600 text-white px-6 py-2 cursor-pointer flex items-center justify-center rounded-sm hover:bg-blue-700 transition-colors duration-200 text-center font-medium text-sm"
+                  className="bg-blue-600 text-white px-4 py-[10px] cursor-pointer flex items-center justify-center rounded-sm hover:bg-blue-700 transition-colors duration-200 text-center font-medium text-sm"
                 >
-                 <p> Join as Student </p>
+                  <p> Start Learning </p>
                 </button>
-                <button 
+                {/* <button 
                   onClick={() => setIsTeacherModalOpen(true)}
                   className="bg-green-600 text-white px-6 py-2 rounded-sm cursor-pointer hover:bg-green-700 transition-colors duration-200 font-medium text-sm"
                 >
                   Apply as Teacher
-                </button>
+                </button> */}
               </div>
             </div>
 
@@ -83,11 +83,26 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 text-black hover:text-gray-600 transition-colors duration-200"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 )}
               </svg>
             </button>
@@ -107,28 +122,34 @@ const Header = () => {
                     {item.name}
                   </Link>
                 ))}
-                
+
                 {/* Mobile Contact Info */}
                 <div className="pt-4 mt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-2 py-3 px-4">
-                    <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="w-4 h-4 text-black"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
-                    <span className="text-black font-medium">+91-9876543210</span>
+                    <span className="text-black font-medium">
+                      +91-9876543210
+                    </span>
                   </div>
-                  
+
                   <div className="flex flex-col gap-2 mt-3">
-                    <button 
+                    <button
                       onClick={() => setIsStudentModalOpen(true)}
                       className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
                     >
-                      Join as Student
+                      Start Learning
                     </button>
-                    <button 
+                    <button
                       onClick={() => setIsTeacherModalOpen(true)}
                       className="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium"
                     >
-                      Apply as Teacher
+                      Teach With Us
                     </button>
                   </div>
                 </div>
@@ -136,16 +157,16 @@ const Header = () => {
             </div>
           )}
         </div>
-        </header>
-      
+      </header>
+
       {/* Modals */}
-      <StudentRegistrationForm 
-        isOpen={isStudentModalOpen} 
-        onClose={() => setIsStudentModalOpen(false)} 
+      <StudentRegistrationForm
+        isOpen={isStudentModalOpen}
+        onClose={() => setIsStudentModalOpen(false)}
       />
-      <TeacherApplicationForm 
-        isOpen={isTeacherModalOpen} 
-        onClose={() => setIsTeacherModalOpen(false)} 
+      <TeacherApplicationForm
+        isOpen={isTeacherModalOpen}
+        onClose={() => setIsTeacherModalOpen(false)}
       />
     </>
   );

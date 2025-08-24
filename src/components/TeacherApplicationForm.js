@@ -131,7 +131,7 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
         </div>
 
         <div>
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-8 text-black">
               {/* Personal Information */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>

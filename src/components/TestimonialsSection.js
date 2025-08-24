@@ -33,36 +33,36 @@ const TestimonialsSection = () => {
       improvement: "Top 10%",
       duration: "4 months"
     },
-    {
-      name: "David Wilson",
-      role: "Parent of Sophie (Grade 9)",
-      subject: "Mathematics",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      text: "Outstanding results! Sophie was struggling with algebra, but now she's one of the top performers in her class. The one-on-one attention made all the difference.",
-      improvement: "A+ Grade",
-      duration: "5 months"
-    },
-    {
-      name: "Lisa Rodriguez",
-      role: "Parent of Carlos (Grade 7)",
-      subject: "All Subjects",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      text: "Comprehensive support across all subjects. Carlos has become more confident and independent in his studies. The tutors really care about each student's success.",
-      improvement: "Overall A",
-      duration: "7 months"
-    },
-    {
-      name: "Amanda Foster",
-      role: "Parent of Jake (Grade 11)",
-      subject: "Advanced Math",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      text: "Preparing for college entrance exams was stressful, but the expert guidance and structured approach helped Jake achieve his target scores. Couldn't be happier!",
-      improvement: "SAT 1450+",
-      duration: "10 months"
-    }
+    // {
+    //   name: "David Wilson",
+    //   role: "Parent of Sophie (Grade 9)",
+    //   subject: "Mathematics",
+    //   image: "/api/placeholder/60/60",
+    //   rating: 5,
+    //   text: "Outstanding results! Sophie was struggling with algebra, but now she's one of the top performers in her class. The one-on-one attention made all the difference.",
+    //   improvement: "A+ Grade",
+    //   duration: "5 months"
+    // },
+    // {
+    //   name: "Lisa Rodriguez",
+    //   role: "Parent of Carlos (Grade 7)",
+    //   subject: "All Subjects",
+    //   image: "/api/placeholder/60/60",
+    //   rating: 5,
+    //   text: "Comprehensive support across all subjects. Carlos has become more confident and independent in his studies. The tutors really care about each student's success.",
+    //   improvement: "Overall A",
+    //   duration: "7 months"
+    // },
+    // {
+    //   name: "Amanda Foster",
+    //   role: "Parent of Jake (Grade 11)",
+    //   subject: "Advanced Math",
+    //   image: "/api/placeholder/60/60",
+    //   rating: 5,
+    //   text: "Preparing for college entrance exams was stressful, but the expert guidance and structured approach helped Jake achieve his target scores. Couldn't be happier!",
+    //   improvement: "SAT 1450+",
+    //   duration: "10 months"
+    // }
   ];
 
 const stats = [
@@ -105,7 +105,7 @@ const stats = [
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
+    <section className="myPadY bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-50 rounded-full -translate-y-48 translate-x-48 opacity-40"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-50 rounded-full translate-y-48 -translate-x-48 opacity-40"></div>

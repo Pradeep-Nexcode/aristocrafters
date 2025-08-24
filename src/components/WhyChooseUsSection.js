@@ -59,7 +59,7 @@ const benefits = [
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+    <section className="myPadY bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full -translate-y-48 translate-x-48 opacity-40"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-50 rounded-full translate-y-48 -translate-x-48 opacity-40"></div>

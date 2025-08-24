@@ -11,7 +11,7 @@ const RegistrationCTASection = () => {
 
   return (
     <>
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="myPadY bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
@@ -72,7 +72,7 @@ const RegistrationCTASection = () => {
                   onClick={() => setIsStudentModalOpen(true)}
                   className="w-full px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  Register Now
+                  Enroll Now
                 </button>
               </div>
 

@@ -96,7 +96,7 @@
 //       </section>
 
 //       {/* Contact Form & Info Section */}
-//       <section className="py-20 relative">
+//       <section className="myPadY relative" id='contact-us-section'>
 //         <div className="container mx-auto px-4">
 //           <div className="max-w-7xl mx-auto">
 //             <div className="grid lg:grid-cols-2 gap-16">
@@ -118,7 +118,7 @@
 //                 </div>
 
 //                 {/* Form */}
-//                 <form onSubmit={handleSubmit} className="space-y-6">
+//                 <form onSubmit={handleSubmit} className="space-y-6 text-black">
 //                   <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-lg">
 //                     {/* Name & Email Row */}
 //                     <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -269,14 +269,14 @@
 //                 {/* Contact Cards */}
 //                 <div className="space-y-6">
 //                   {[
-//                     {
-//                       icon: '📍',
-//                       title: 'Visit Our Center',
-//                       info: '123 Education Street, Knowledge Park',
-//                       subInfo: 'New Delhi - 110001, India',
-//                       color: 'from-blue-500 to-purple-600',
-//                       action: 'Get Directions'
-//                     },
+//                     // {
+//                     //   icon: '📍',
+//                     //   title: 'Visit Our Center',
+//                     //   info: '123 Education Street, Knowledge Park',
+//                     //   subInfo: 'New Delhi - 110001, India',
+//                     //   color: 'from-blue-500 to-purple-600',
+//                     //   action: 'Get Directions'
+//                     // },
 //                     {
 //                       icon: '📞',
 //                       title: 'Call Us',
@@ -325,7 +325,7 @@
 //                 </div>
 
 //                 {/* Map Placeholder */}
-//                 <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-lg">
+//                 {/* <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-lg">
 //                   <h3 className="text-lg font-black text-gray-900 mb-4 flex items-center">
 //                     <span className="mr-2">🗺️</span>
 //                     Find Us on Map
@@ -343,11 +343,10 @@
 //                       </button>
 //                     </div>
                     
-//                     {/* Decorative elements */}
 //                     <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full animate-ping" />
 //                     <div className="absolute bottom-4 left-4 w-6 h-6 bg-white/20 rounded-full animate-pulse" />
 //                   </div>
-//                 </div>
+//                 </div> */}
 
 //                 {/* Social Media */}
 //                 <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-lg">
@@ -379,7 +378,7 @@
 //       </section>
 
 //       {/* FAQ Section */}
-//       <section className="py-20 bg-white/50 backdrop-blur-sm">
+//       <section className="myPadY bg-white/50 backdrop-blur-sm">
 //         <div className="container mx-auto px-4">
 //           <div className="max-w-4xl mx-auto">
 //             {/* Section Header */}
@@ -441,10 +440,10 @@
 //             {/* More Questions CTA */}
 //             <div className="text-center mt-12">
 //               <p className="text-gray-600 mb-4">Still have questions?</p>
-//               <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
+//               <a href='#contact-us-section' className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
 //                 <span className="mr-2">💬</span>
 //                 Contact Our Support Team
-//               </button>
+//               </a>
 //             </div>
 //           </div>
 //         </div>
