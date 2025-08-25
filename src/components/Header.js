@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { FaHome, FaBook, FaPhone } from "react-icons/fa";
 import StudentRegistrationForm from "./StudentRegistrationForm";
 import TeacherApplicationForm from "./TeacherApplicationForm";
 
@@ -10,12 +11,12 @@ const Header = () => {
   const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
 
   const navigationItems = [
-    { name: "Home", href: "/", icon: "🏠" },
-    { name: "About", href: "/about", icon: "📖" },
+    { name: "Home", href: "/", icon: <FaHome /> },
+    { name: "About", href: "/about", icon: <FaBook /> },
     // { name: 'Courses', href: '/courses', icon: '📚' },
     // { name: 'Why Choose Us', href: '/#why-choose-us', icon: '⭐' },
     // { name: 'Testimonials', href: '/#testimonials', icon: '💬' },
-    { name: "Contact", href: "/contact", icon: "📞" },
+    { name: "Contact", href: "/contact", icon: <FaPhone /> },
   ];
 
   return (

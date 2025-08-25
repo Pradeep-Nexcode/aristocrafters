@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoPersonFill } from "react-icons/go";
+import { FaGraduationCap, FaChalkboardTeacher, FaBook, FaUserGraduate, FaBullseye, FaCheck } from "react-icons/fa";
 const AboutSection = () => {
   return (
     <section className="myPadY bg-white relative overflow-hidden">
@@ -43,7 +44,7 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-blue-50 rounded-2xl p-6 text-center">
                 <div className="w-12 h-12 bg-blue-600 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-white text-xl">🎓</span>
+                  <FaGraduationCap className="text-white text-xl" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">5+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
@@ -51,7 +52,7 @@ const AboutSection = () => {
               
               <div className="bg-green-50 rounded-2xl p-6 text-center">
                 <div className="w-12 h-12 bg-green-600 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-white text-xl">👨‍🏫</span>
+                  <FaChalkboardTeacher className="text-white text-xl" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">5+</div>
                 <div className="text-sm text-gray-600">Expert Tutors</div>
@@ -59,7 +60,7 @@ const AboutSection = () => {
               
               {/* <div className="bg-purple-50 rounded-2xl p-6 text-center">
                 <div className="w-12 h-12 bg-purple-600 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-white text-xl">📚</span>
+                  <FaBook className="text-white text-xl" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">50K+</div>
                 <div className="text-sm text-gray-600">Students Taught</div>
@@ -101,25 +102,25 @@ const AboutSection = () => {
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <span className="text-sm">✓</span>
+                        <FaCheck className="text-sm" />
                       </div>
                       <span>Personalized Learning Plans</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <span className="text-sm">✓</span>
+                        <FaCheck className="text-sm" />
                       </div>
                       <span>24/7 Doubt Resolution</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <span className="text-sm">✓</span>
+                        <FaCheck className="text-sm" />
                       </div>
                       <span>Regular Progress Tracking</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <span className="text-sm">✓</span>
+                        <FaCheck className="text-sm" />
                       </div>
                       <span>Interactive Learning Tools</span>
                     </div>
@@ -130,7 +131,7 @@ const AboutSection = () => {
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-lg">👨‍🎓</span>
+                      <FaUserGraduate className="text-lg" />
                     </div>
                     <div>
                       <div className="font-semibold">Rahul Sharma</div>
@@ -151,7 +152,7 @@ const AboutSection = () => {
             
             {/* Floating Elements */}
             <div className="absolute -top-6 -right-6 bg-yellow-400 rounded-2xl p-4 shadow-lg">
-              <span className="text-2xl">🎯</span>
+              <FaBullseye className="text-2xl" />
             </div>
             
             {/* <div className="absolute -bottom-6 -left-6 bg-green-500 rounded-2xl p-4 shadow-lg">

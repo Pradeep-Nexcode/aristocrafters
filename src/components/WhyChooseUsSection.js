@@ -1,44 +1,45 @@
 
 import { FaPeopleGroup } from "react-icons/fa6";
+import { FaStar, FaLaptop, FaBullseye, FaChartBar, FaGraduationCap, FaGlobe } from "react-icons/fa";
 const WhyChooseUsSection = () => {
 const benefits = [
   {
-    icon: "✨",
+    icon: <FaStar />,
     title: "Experienced Tutors",
     description: "Experienced tutors who simplify complex topics and make learning engaging",
     color: "blue",
     stat: "Expert Teachers"
   },
   {
-    icon: "💻",
+    icon: <FaLaptop />,
     title: "Online Tuition Available",
     description: "Learn from the comfort of your home with our flexible online classes",
     color: "green",
     stat: "100% Online"
   },
   {
-    icon: "🎯",
+    icon: <FaBullseye />,
     title: "Customized Learning Plans",
     description: "Personalized learning plans tailored for each student&apos;s unique needs",
     color: "purple",
     stat: "Individual Focus"
   },
   {
-    icon: "📊",
+    icon: <FaChartBar />,
     title: "Regular Assessments",
     description: "Regular assessments & progress reports to track student improvement",
     color: "orange",
     stat: "Progress Reports"
   },
   {
-    icon: "🎓",
+    icon: <FaGraduationCap />,
     title: "Exam Preparation",
     description: "Focus on exam preparation & scoring high marks in all subjects",
     color: "indigo",
     stat: "High Scores"
   },
   {
-    icon: "🌐",
+    icon: <FaGlobe />,
     title: "Interactive Learning",
     description: "Engaging quizzes, activities, and discussions to make learning fun and effective",
     color: "red",

@@ -1,10 +1,11 @@
 import React from 'react';
 import { SiGoogleclassroom } from "react-icons/si";
+import { FaDesktop, FaBullseye, FaUsers } from "react-icons/fa";
 const ClassFormatsSection = () => {
   const formats = [
     {
       id: 1,
-      icon: "🖥",
+      icon: <FaDesktop />,
       title: "Online Classes",
       description: "Learn from the comfort of home with interactive online sessions",
       features: [
@@ -19,7 +20,7 @@ const ClassFormatsSection = () => {
     
     {
       id: 2,
-      icon: "🎯",
+      icon: <FaBullseye />,
       title: "One-to-One Coaching",
       description: "Exclusive sessions for special focus and personalized attention",
       features: [
@@ -33,11 +34,11 @@ const ClassFormatsSection = () => {
     },
     {
       id: 3,
-      icon: "👥",
+      icon: <FaUsers />,
       title: "Small Group Batches",
       description: "Individual attention with peer learning in small groups",
       features: [
-        "5-10 students per batch",
+        "2-5 students per batch",
         "Peer interaction & discussion",
         "Collaborative learning",
         "Cost-effective option"
@@ -116,7 +117,7 @@ const ClassFormatsSection = () => {
                 <div className="p-8">
                   {/* Icon */}
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${getColorClasses(format.color, 'icon')}`}>
-                    <span className="text-3xl">{format.icon}</span>
+                    <span className="text-3xl text-black">{format.icon}</span>
                   </div>
                   
                   {/* Title & Description */}
