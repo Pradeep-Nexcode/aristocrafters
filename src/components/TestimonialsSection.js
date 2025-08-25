@@ -1,4 +1,5 @@
 import { TbBrandStorytel } from "react-icons/tb";
+import { FaBullseye, FaBook, FaChalkboardTeacher, FaBolt } from "react-icons/fa";
 
 
 const TestimonialsSection = () => {
@@ -67,22 +68,22 @@ const TestimonialsSection = () => {
 
 const stats = [
   {
-    icon: "🎯",
+    icon: <FaBullseye />,
     number: "5–10",
     label: "Grade Levels"
   },
   {
-    icon: "📚",
+    icon: <FaBook />,
     number: "All Subjects",
     label: "Covered"
   },
   {
-    icon: "👩‍🏫",
+    icon: <FaChalkboardTeacher />,
     number: "Qualified",
     label: "Expert Tutors"
   },
   {
-    icon: "⚡",
+    icon: <FaBolt />,
     number: "Personalized",
     label: "Learning Plans"
   }
@@ -196,8 +197,8 @@ const stats = [
             {/* Stats Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center group">
-                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div key={index} className="text-center flex flex-col items-center justify-center group">
+                  <div className="text-4xl text-center mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
                   </div>
                   <div className="text-3xl lg:text-4xl font-bold mb-2">

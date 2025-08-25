@@ -1,22 +1,24 @@
+import { FaBullseye, FaLaptop, FaUsers, FaChartBar, FaUserGraduate, FaChalkboardTeacher, FaRocket } from "react-icons/fa";
+
 const CTASection = () => {
   const benefits = [
     {
-      icon: "🎯",
+      icon: <FaBullseye />,
       title: "Expert Tutors",
       description: "Qualified teachers with proven track records"
     },
     {
-      icon: "💻",
+      icon: <FaLaptop />,
       title: "100% Online",
       description: "Learn from anywhere with flexible scheduling"
     },
     {
-      icon: "👥",
+      icon: <FaUsers />,
       title: "Small Batches",
       description: "Personal attention in groups of 5-10 students"
     },
     {
-      icon: "📊",
+      icon: <FaChartBar />,
       title: "Progress Tracking",
       description: "Regular assessments and detailed reports"
     }
@@ -83,7 +85,7 @@ const CTASection = () => {
               <button className="group px-10 py-5 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 rounded-2xl font-bold text-lg hover:from-yellow-300 hover:to-orange-400 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 relative overflow-hidden">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 <div className="relative flex items-center justify-center gap-3">
-                  <span className="text-2xl">👨‍🎓</span>
+                  <FaUserGraduate className="text-2xl" />
                   <div>
                     <div>Register as a Student</div>
                     <div className="text-sm opacity-80">Start Learning Today</div>
@@ -93,7 +95,7 @@ const CTASection = () => {
               
               <button className="group px-10 py-5 border-3 border-white text-white rounded-2xl font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 relative overflow-hidden">
                 <div className="relative flex items-center justify-center gap-3">
-                  <span className="text-2xl">👨‍🏫</span>
+                  <FaChalkboardTeacher className="text-2xl" />
                   <div>
                     <div>Apply as a Teacher</div>
                     <div className="text-sm opacity-80">Join Our Team</div>
@@ -189,7 +191,7 @@ const CTASection = () => {
                     />
                   </div>
                   <button className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Book My Free Assessment 🚀
+                    <span className="flex items-center justify-center gap-2">Book My Free Assessment <FaRocket /></span>
                   </button>
                 </div>
                 

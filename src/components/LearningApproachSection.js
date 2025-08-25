@@ -1,12 +1,13 @@
 import React from 'react';
 import { GiProgression } from "react-icons/gi";
+import { FaBullseye, FaClipboardList, FaLaptop, FaChartLine } from "react-icons/fa";
 const LearningApproachSection = () => {
   const steps = [
     {
       number: "01",
       title: "Free Assessment",
       description: "Comprehensive evaluation of your child's current academic level, learning style, and specific areas that need improvement.",
-      icon: "🎯",
+      icon: <FaBullseye />,
       color: "blue",
       features: ["Skill Assessment", "Learning Style Analysis", "Goal Setting"]
     },
@@ -14,7 +15,7 @@ const LearningApproachSection = () => {
       number: "02",
       title: "Custom Learning Plan",
       description: "Personalized curriculum designed specifically for your child's needs, pace, and academic objectives.",
-      icon: "📋",
+      icon: <FaClipboardList />,
       color: "green",
       features: ["Tailored Curriculum", "Flexible Pacing", "Progress Milestones"]
     },
@@ -22,7 +23,7 @@ const LearningApproachSection = () => {
       number: "03",
       title: "Interactive Sessions",
       description: "Engaging one-on-one tutoring sessions with expert teachers using modern teaching tools and methodologies.",
-      icon: "💻",
+      icon: <FaLaptop />,
       color: "purple",
       features: ["Live Sessions", "Interactive Tools", "Real-time Feedback"]
     },
@@ -30,7 +31,7 @@ const LearningApproachSection = () => {
       number: "04",
       title: "Progress Tracking",
       description: "Continuous monitoring of academic progress with detailed reports and regular parent-teacher consultations.",
-      icon: "📈",
+      icon: <FaChartLine />,
       color: "orange",
       features: ["Weekly Reports", "Parent Updates", "Performance Analytics"]
     }

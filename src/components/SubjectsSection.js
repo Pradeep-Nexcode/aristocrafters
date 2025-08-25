@@ -1,103 +1,151 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Link from "next/link";
 import { TbBooks } from "react-icons/tb";
-import { FaUser, FaEnvelope, FaPhone, FaGraduationCap, FaBookOpen, FaClock, FaPaperPlane } from 'react-icons/fa';
-import Modal from './Modal';
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhone,
+  FaGraduationCap,
+  FaBookOpen,
+  FaClock,
+  FaPaperPlane,
+  FaBook,
+  FaCalculator,
+  FaMicroscope,
+  FaGlobe,
+  FaPen,
+  FaScroll,
+  FaStar,
+} from "react-icons/fa";
+import Modal from "./Modal";
 
 const SubjectsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    grade: '',
-    preferredTime: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    grade: "",
+    preferredTime: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Custom Subject Request:', formData);
-    alert('Thank you! We will contact you soon regarding your custom subject request.');
+    console.log("Custom Subject Request:", formData);
+    alert(
+      "Thank you! We will contact you soon regarding your custom subject request."
+    );
     setIsModalOpen(false);
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      grade: '',
-      preferredTime: '',
-      message: ''
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      grade: "",
+      preferredTime: "",
+      message: "",
     });
   };
 
   // Form validation function
   const isFormValid = () => {
     return (
-      formData.name.trim() !== '' &&
-      formData.email.trim() !== '' &&
-      formData.phone.trim() !== '' &&
-      formData.subject.trim() !== '' &&
-      formData.grade !== ''
+      formData.name.trim() !== "" &&
+      formData.email.trim() !== "" &&
+      formData.phone.trim() !== "" &&
+      formData.subject.trim() !== "" &&
+      formData.grade !== ""
     );
   };
   const subjects = [
     {
       name: "Tamil",
-      description: "Strong foundation in grammar, reading, comprehension & writing",
-      icon: "📘",
+      slug: "tamil",
+      description:
+        "Strong foundation in grammar, reading, comprehension & writing",
+      icon: <FaBook />,
       color: "blue",
       students: "15K+",
       rating: "4.9",
-      topics: ["Grammar", "Reading", "Writing"]
+      topics: ["Grammar", "Reading", "Writing"],
     },
     {
       name: "English",
+      slug: "english",
       description: "Grammar, vocabulary, reading skills & exam preparation",
-      icon: "📖",
+      icon: <FaBook />,
       color: "purple",
       students: "18K+",
       rating: "4.9",
-      topics: ["Grammar", "Vocabulary", "Reading"]
+      topics: ["Grammar", "Vocabulary", "Reading"],
     },
     {
       name: "Mathematics",
-      description: "Conceptual clarity, problem-solving, and application skills",
-      icon: "➗",
+      slug: "mathematics",
+      description:
+        "Conceptual clarity, problem-solving, and application skills",
+      icon: <FaCalculator />,
       color: "green",
       students: "20K+",
       rating: "4.8",
-      topics: ["Algebra", "Geometry", "Problem Solving"]
+      topics: ["Algebra", "Geometry", "Problem Solving"],
     },
     {
       name: "Science",
+      slug: "science",
       description: "Simplified explanations in Physics, Chemistry & Biology",
-      icon: "🔬",
+      icon: <FaMicroscope />,
       color: "orange",
       students: "16K+",
       rating: "4.7",
-      topics: ["Physics", "Chemistry", "Biology"]
+      topics: ["Physics", "Chemistry", "Biology"],
     },
     {
       name: "Social Science",
-      description: "Easy learning methods for History, Geography, Civics & Economics",
-      icon: "🌍",
+      slug: "social-science",
+      description:
+        "Easy learning methods for History, Geography, Civics & Economics",
+      icon: <FaGlobe />,
       color: "red",
       students: "12K+",
       rating: "4.8",
-      topics: ["History", "Geography", "Civics"]
-    }
+      topics: ["History", "Geography", "Civics"],
+    },
+    {
+      name: "Hindi",
+      slug: "hindi",
+      description:
+        "Improve grammar, vocabulary, reading & writing fluency in Hindi",
+      icon: <FaPen />,
+      color: "pink",
+      students: "10K+",
+      rating: "4.8",
+      topics: ["Grammar", "Comprehension", "Writing"],
+    },
+    {
+      name: "Sanskrit",
+      slug: "sanskrit",
+      description:
+        "Learn Sanskrit basics, shlokas, grammar & translation skills",
+      icon: <FaScroll />,
+      color: "yellow",
+      students: "8K+",
+      rating: "4.7",
+      topics: ["Shlokas", "Grammar", "Translation"],
+    },
   ];
 
   const getColorClasses = (color) => {
@@ -107,43 +155,43 @@ const SubjectsSection = () => {
         icon: "bg-blue-600",
         text: "text-blue-600",
         border: "border-blue-200",
-        hover: "hover:border-blue-400"
+        hover: "hover:border-blue-400",
       },
       green: {
         bg: "bg-green-50",
         icon: "bg-green-600",
         text: "text-green-600",
         border: "border-green-200",
-        hover: "hover:border-green-400"
+        hover: "hover:border-green-400",
       },
       purple: {
         bg: "bg-purple-50",
         icon: "bg-purple-600",
         text: "text-purple-600",
         border: "border-purple-200",
-        hover: "hover:border-purple-400"
+        hover: "hover:border-purple-400",
       },
       orange: {
         bg: "bg-orange-50",
         icon: "bg-orange-600",
         text: "text-orange-600",
         border: "border-orange-200",
-        hover: "hover:border-orange-400"
+        hover: "hover:border-orange-400",
       },
       red: {
         bg: "bg-red-50",
         icon: "bg-red-600",
         text: "text-red-600",
         border: "border-red-200",
-        hover: "hover:border-red-400"
+        hover: "hover:border-red-400",
       },
       indigo: {
         bg: "bg-indigo-50",
         icon: "bg-indigo-600",
         text: "text-indigo-600",
         border: "border-indigo-200",
-        hover: "hover:border-indigo-400"
-      }
+        hover: "hover:border-indigo-400",
+      },
     };
     return colors[color] || colors.blue;
   };
@@ -153,7 +201,7 @@ const SubjectsSection = () => {
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full -translate-y-48 -translate-x-48 opacity-30"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-100 rounded-full translate-y-48 translate-x-48 opacity-30"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -167,116 +215,151 @@ const SubjectsSection = () => {
             <span className="block text-blue-600">Expert Guidance</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive curriculum coverage for classes 5-10 with personalized learning paths and interactive sessions
+            Comprehensive curriculum coverage for classes 2-5 with personalized
+            learning paths and interactive sessions
           </p>
         </div>
 
         {/* Subjects Grid */}
-       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-   
-
-          {subjects.slice(0, 3).map((subject, index) => {
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {subjects.map((subject, index) => {
             const colorClasses = getColorClasses(subject.color);
             return (
-              <div key={index} className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border-2 ${colorClasses.border} ${colorClasses.hover} card-hover`}>
+              <div
+                key={index}
+                className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border-2 ${colorClasses.border} ${colorClasses.hover} card-hover`}
+              >
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className={`w-16 h-16 ${colorClasses.icon} rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg`}>
+                  <div
+                    className={`w-16 h-16 ${colorClasses.icon} rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg`}
+                  >
                     {subject.icon}
                   </div>
                   <div className="text-right">
                     <div className="flex items-center gap-1 mb-1">
-                      <span className="text-yellow-400 text-sm">⭐</span>
-                      <span className="text-sm font-semibold text-gray-700">{subject.rating}</span>
+                      <FaStar className="text-yellow-400 text-sm" />
+                      <span className="text-sm font-semibold text-gray-700">
+                        {subject.rating}
+                      </span>
                     </div>
-                    <div className="text-xs text-gray-500">{subject.students} students</div>
+                    <div className="text-xs text-gray-500">
+                      {subject.students} students
+                    </div>
                   </div>
                 </div>
-                
+
                 {/* Content */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                   {subject.name}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{subject.description}</p>
-                
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {subject.description}
+                </p>
+
                 {/* Topics */}
                 <div className="mb-6">
-                  <div className="text-sm font-semibold text-gray-700 mb-2">Key Topics:</div>
+                  <div className="text-sm font-semibold text-gray-700 mb-2">
+                    Key Topics:
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {subject.topics.map((topic, topicIndex) => (
-                      <span key={topicIndex} className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.text} text-xs font-medium rounded-full`}>
+                      <span
+                        key={topicIndex}
+                        className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.text} text-xs font-medium rounded-full`}
+                      >
                         {topic}
                       </span>
                     ))}
                   </div>
                 </div>
-                
+
                 {/* CTA */}
                 <div className="flex items-center justify-between">
-                  <button className={`px-6 py-3 ${colorClasses.icon} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}>
+                  <button
+                    className={`px-6 py-3 ${colorClasses.icon} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
+                  >
                     Start Learning
                   </button>
-                  <button className={`${colorClasses.text} hover:underline font-medium transition-colors`}>
+                  <Link
+                    href={`/subjects/${subject.slug}`}
+                    className={`${colorClasses.text} hover:underline font-medium transition-colors`}
+                  >
                     View Details →
-                  </button>
+                  </Link>
                 </div>
               </div>
             );
           })}
         </div>
-            {/* Subjects Grid */}
-       <div className="grid md:grid-cols-2 gap-8 mb-12 justify-center">
-   
-
+        {/* Subjects Grid */}
+        {/* <div className="grid md:grid-cols-2 gap-8 mb-12 justify-center">
           {subjects.slice(3).map((subject, index) => {
             const colorClasses = getColorClasses(subject.color);
             return (
-              <div key={index} className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border-2 ${colorClasses.border} ${colorClasses.hover} card-hover`}>
-                {/* Header */}
+              <div
+                key={index}
+                className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border-2 ${colorClasses.border} ${colorClasses.hover} card-hover`}
+              >
                 <div className="flex items-center justify-between mb-6">
-                  <div className={`w-16 h-16 ${colorClasses.icon} rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg`}>
+                  <div
+                    className={`w-16 h-16 ${colorClasses.icon} rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg`}
+                  >
                     {subject.icon}
                   </div>
                   <div className="text-right">
                     <div className="flex items-center gap-1 mb-1">
                       <span className="text-yellow-400 text-sm">⭐</span>
-                      <span className="text-sm font-semibold text-gray-700">{subject.rating}</span>
+                      <span className="text-sm font-semibold text-gray-700">
+                        {subject.rating}
+                      </span>
                     </div>
-                    <div className="text-xs text-gray-500">{subject.students} students</div>
+                    <div className="text-xs text-gray-500">
+                      {subject.students} students
+                    </div>
                   </div>
                 </div>
-                
-                {/* Content */}
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                   {subject.name}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{subject.description}</p>
-                
-                {/* Topics */}
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {subject.description}
+                </p>
+
                 <div className="mb-6">
-                  <div className="text-sm font-semibold text-gray-700 mb-2">Key Topics:</div>
+                  <div className="text-sm font-semibold text-gray-700 mb-2">
+                    Key Topics:
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {subject.topics.map((topic, topicIndex) => (
-                      <span key={topicIndex} className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.text} text-xs font-medium rounded-full`}>
+                      <span
+                        key={topicIndex}
+                        className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.text} text-xs font-medium rounded-full`}
+                      >
                         {topic}
                       </span>
                     ))}
                   </div>
                 </div>
-                
-                {/* CTA */}
+
                 <div className="flex items-center justify-between">
-                  <button className={`px-6 py-3 ${colorClasses.icon} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}>
+                  <button
+                    className={`px-6 py-3 ${colorClasses.icon} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
+                  >
                     Start Learning
                   </button>
-                  <button className={`${colorClasses.text} hover:underline font-medium transition-colors`}>
+                  <Link
+                    href={`/subjects/${subject.slug}`}
+                    className={`${colorClasses.text} hover:underline font-medium transition-colors`}
+                  >
                     View Details →
-                  </button>
+                  </Link>
                 </div>
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* Bottom CTA Section */}
         <div className="bg-white rounded-3xl shadow-sm p-8 lg:p-12 text-center">
@@ -285,10 +368,11 @@ const SubjectsSection = () => {
               Can&apos;t Find Your Subject?
             </h3>
             <p className="text-lg text-gray-600 mb-8">
-              We offer personalized tutoring for additional subjects and specialized topics. Let us know what you need!
+              We offer personalized tutoring for additional subjects and
+              specialized topics. Let us know what you need!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
+              <button
                 onClick={() => setIsModalOpen(true)}
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 mx-auto"
               >
@@ -304,8 +388,8 @@ const SubjectsSection = () => {
       </div>
 
       {/* Custom Subject Request Modal */}
-      <Modal 
-        isOpen={isModalOpen} 
+      <Modal
+        isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         title="Request Custom Subject"
         size="lg"
@@ -317,8 +401,12 @@ const SubjectsSection = () => {
                 <FaGraduationCap className="text-2xl text-blue-600" />
               </div>
               <div>
-                <h4 className="text-xl font-semibold text-gray-900">Personalized Learning Request</h4>
-                <p className="text-gray-600">Tell us about the subject you&apos;d like to learn</p>
+                <h4 className="text-xl font-semibold text-gray-900">
+                  Personalized Learning Request
+                </h4>
+                <p className="text-gray-600">
+                  Tell us about the subject you&apos;d like to learn
+                </p>
               </div>
             </div>
           </div>

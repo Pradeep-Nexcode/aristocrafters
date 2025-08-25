@@ -11,6 +11,7 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
     email: '',
     phone: '',
     grade: '',
+    board: '',
     subjects: [],
     timing: '',
     notes: ''
@@ -24,13 +25,16 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
     'English',
     'Mathematics',
     'Science',
-    'Social Science'
+    'Social Science',
+    'Hindi',
+    'Sanskrit'
   ];
 
   const timings = [
-    'Morning (8:00 AM - 12:00 PM)',
-    'Afternoon (12:00 PM - 4:00 PM)',
-    'Evening (4:00 PM - 8:00 PM)'
+    'Evening (4:00 PM - 5:00 PM)',
+    'Evening (5:00 PM - 6:00 PM)',
+    'Evening (6:00 PM - 7:00 PM)',
+    'Night (7:00 PM - 8:00 PM)',
   ];
 
   const grades = [
@@ -41,6 +45,13 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
     '9th Grade',
     '10th Grade'
   ];
+
+  const boards = [
+    'State Boards',
+    'CBSE',
+    'ICSE',
+    'Cambridge International'
+  ]
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -76,6 +87,7 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
         from_email: formData.email,
         phone: formData.phone,
         grade: formData.grade,
+        board: formData.board,
         subjects: formData.subjects.join(', '),
         timing: formData.timing,
         notes: formData.notes || 'No additional notes provided',
@@ -101,6 +113,7 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
       formData.email.trim() !== '' &&
       formData.phone.trim() !== '' &&
       formData.grade !== '' &&
+      formData.board !== '' &&
       formData.subjects.length > 0 &&
       formData.timing !== ''
     );
@@ -238,6 +251,25 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
                     </label>
                   ))}
                 </div>
+              </div>
+
+              {/* Board */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                 Educational Board   *
+                </label>
+                <select
+                  name="board"
+                  value={formData.board}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                >
+                  <option value="">Select Board</option>
+                  {boards.map(board => (
+                    <option key={board} value={board}>{board}</option>
+                  ))}
+                </select>
               </div>
 
               {/* Timing Preference */}

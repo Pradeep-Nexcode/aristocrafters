@@ -5,7 +5,7 @@ import { FaRocket } from 'react-icons/fa';
 import StudentRegistrationForm from './StudentRegistrationForm';
 import TeacherApplicationForm from './TeacherApplicationForm';
 
-const RegistrationCTASection = () => {
+const RegistrationCTASection = ({ onOpenModal }) => {
   const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
   const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
 
@@ -68,12 +68,21 @@ const RegistrationCTASection = () => {
                     Flexible timings
                   </li>
                 </ul>
-                <button
-                  onClick={() => setIsStudentModalOpen(true)}
-                  className="w-full px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  Enroll Now
-                </button>
+                <div className="space-y-3">
+                  {/* <button
+                    onClick={onOpenModal}
+                    className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    Book Free Demo
+                  </button> */}
+                  <button
+                    onClick={() => setIsStudentModalOpen(true)}
+                    className="w-full px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    Enroll Now
+                  </button>
+
+                </div>
               </div>
 
               {/* Teacher Application CTA */}

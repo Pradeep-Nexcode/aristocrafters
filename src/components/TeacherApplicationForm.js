@@ -12,6 +12,7 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
     phone: '',
     subjects: [],
     classes: [],
+    board: '',
     experience: '',
     mode: '',
     resume: null
@@ -25,8 +26,17 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
     'English',
     'Mathematics',
     'Science',
-    'Social Science'
+    'Social Science',
+    'Hindi',
+    'Sanskrit'
   ];
+
+    const boards = [
+    'State Boards',
+    'CBSE',
+    'ICSE',
+    'Cambridge International'
+  ]
 
   const classes = [
     '5th Grade',
@@ -47,7 +57,8 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
 
   const modeOptions = [
     'Part-time',
-    'Full-time'
+    'Full-time',
+    'Hybrid'
   ];
 
   const handleInputChange = (e) => {
@@ -91,6 +102,7 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
         from_name: formData.fullName,
         from_email: formData.email,
         phone: formData.phone,
+        board: formData.board,
         subjects: formData.subjects.join(', '),
         classes: formData.classes.join(', '),
         experience: formData.experience,
@@ -118,6 +130,7 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
       formData.email.trim() !== '' &&
       formData.phone.trim() !== '' &&
       formData.subjects.length > 0 &&
+      formData.board !== '' &&
       formData.classes.length > 0 &&
       formData.experience !== '' &&
       formData.mode !== ''
@@ -237,6 +250,25 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
                     </label>
                   ))}
                 </div>
+              </div>
+
+              {/* Board */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Educational Board *
+                </label>
+                <select
+                  name="board"
+                  value={formData.board}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
+                >
+                  <option value="">Select Board</option>
+                  {boards.map(board => (
+                    <option key={board} value={board}>{board}</option>
+                  ))}
+                </select>
               </div>
 
               {/* Classes */}
