@@ -41,17 +41,22 @@ const HeroSection = () => {
                 1-to-1 Online Coaching
               </div>
 
-             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight font-poppins">
-  Help Your Child Succeed with
-  <span className=" bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-    One-on-One Expert Tutoring
-  </span>
-  <span className="text-4xl lg:text-5xl"> from Aristocrafters</span>
-</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold md:font-bold text-gray-900 mb-6 leading-tight font-poppins">
+                Help Your Child Succeed with
+                <span className=" bg-gradient-to-r from-blue-600 ml-2 to-purple-600 bg-clip-text text-transparent">
+                  One-on-One Expert Tutoring
+                </span>
+                <span className="text-4xl lg:text-5xl">
+                  {" "}
+                  from Aristocrafters
+                </span>
+              </h1>
 
-<p className="text-xl text-gray-600 mb-8 leading-tight max-w-lg font-nunito">
-  Personalized lessons for Classes 5–10 in Tamil, English, Maths, Science, and Social Science — taught in simple, engaging one-to-one sessions.
-</p>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-tight max-w-lg font-nunito">
+                Personalized lessons for Classes 5–10 in Tamil, English, Maths,
+                Science, and Social Science — taught in simple, engaging
+                one-to-one sessions.
+              </p>
               {/* Key Features */}
               <div className="flex items-center gap-6 mb-8">
                 <div className="flex items-center gap-2 text-gray-700">
@@ -171,9 +176,9 @@ const HeroSection = () => {
 
                   <div className="flex items-center justify-between">
                     <div className="flex -space-x-2">
-                      <div className="w-8 h-8 bg-blue-500 rounded-full border-2 border-white"></div>
-                      <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white"></div>
-                      <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
+                      <div className="w-8 h-8 bg-blue-500 text-sm flex items-center justify-center rounded-full border-2 border-white"><p>M</p></div>
+                      <div className="w-8 h-8 bg-green-500 text-sm flex items-center justify-center rounded-full border-2 border-white"><p>S</p></div>
+                      <div className="w-8 h-8 bg-purple-500 text-sm flex items-center justify-center rounded-full border-2 border-white"><p>P</p></div>
                       <div className="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs font-medium text-gray-600">
                         +5
                       </div>
