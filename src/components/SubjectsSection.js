@@ -220,146 +220,120 @@ const SubjectsSection = () => {
           </p>
         </div>
 
-        {/* Subjects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {subjects.map((subject, index) => {
-            const colorClasses = getColorClasses(subject.color);
-            return (
-              <div
-                key={index}
-                className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border-2 ${colorClasses.border} ${colorClasses.hover} card-hover`}
-              >
-                {/* Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div
-                    className={`w-16 h-16 ${colorClasses.icon} rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg`}
-                  >
-                    {subject.icon}
-                  </div>
-                  <div className="text-right">
-                    <div className="flex items-center gap-1 mb-1">
-                      <FaStar className="text-yellow-400 text-sm" />
-                      <span className="text-sm font-semibold text-gray-700">
-                        {subject.rating}
-                      </span>
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      {subject.students} students
+        {/* Subjects Grid - Optimized for 7 subjects */}
+        <div className="mb-12">
+          {/* First row - 4 subjects */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mb-6 lg:mb-8">
+            {subjects.slice(0, 4).map((subject, index) => {
+              const colorClasses = getColorClasses(subject.color);
+              return (
+                <div
+                  key={index}
+                  className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 lg:p-8 border-2 ${colorClasses.border} ${colorClasses.hover} card-hover`}
+                >
+                  {/* Header */}
+                  <div className="flex items-center justify-center mb-6">
+                    <div
+                      className={`w-16 h-16 ${colorClasses.icon} rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg`}
+                    >
+                      {subject.icon}
                     </div>
                   </div>
-                </div>
 
-                {/* Content */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {subject.name}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {subject.description}
-                </p>
+                  {/* Content */}
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors text-center">
+                    {subject.name}
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-center text-sm lg:text-base">
+                    {subject.description}
+                  </p>
 
-                {/* Topics */}
-                <div className="mb-6">
-                  <div className="text-sm font-semibold text-gray-700 mb-2">
-                    Key Topics:
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {subject.topics.map((topic, topicIndex) => (
-                      <span
-                        key={topicIndex}
-                        className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.text} text-xs font-medium rounded-full`}
-                      >
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <div className="flex items-center justify-between">
-                  <button
-                    className={`px-6 py-3 ${colorClasses.icon} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
-                  >
-                    Start Learning
-                  </button>
-                  <Link
-                    href={`/subjects/${subject.slug}`}
-                    className={`${colorClasses.text} hover:underline font-medium transition-colors`}
-                  >
-                    View Details →
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        {/* Subjects Grid */}
-        {/* <div className="grid md:grid-cols-2 gap-8 mb-12 justify-center">
-          {subjects.slice(3).map((subject, index) => {
-            const colorClasses = getColorClasses(subject.color);
-            return (
-              <div
-                key={index}
-                className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border-2 ${colorClasses.border} ${colorClasses.hover} card-hover`}
-              >
-                <div className="flex items-center justify-between mb-6">
-                  <div
-                    className={`w-16 h-16 ${colorClasses.icon} rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg`}
-                  >
-                    {subject.icon}
-                  </div>
-                  <div className="text-right">
-                    <div className="flex items-center gap-1 mb-1">
-                      <span className="text-yellow-400 text-sm">⭐</span>
-                      <span className="text-sm font-semibold text-gray-700">
-                        {subject.rating}
-                      </span>
+                  {/* Topics */}
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-gray-700 mb-2 text-center">
+                      Key Topics:
                     </div>
-                    <div className="text-xs text-gray-500">
-                      {subject.students} students
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {subject.topics.map((topic, topicIndex) => (
+                        <span
+                          key={topicIndex}
+                          className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.text} text-xs font-medium rounded-full`}
+                        >
+                          {topic}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {subject.name}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {subject.description}
-                </p>
-
-                <div className="mb-6">
-                  <div className="text-sm font-semibold text-gray-700 mb-2">
-                    Key Topics:
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {subject.topics.map((topic, topicIndex) => (
-                      <span
-                        key={topicIndex}
-                        className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.text} text-xs font-medium rounded-full`}
-                      >
-                        {topic}
-                      </span>
-                    ))}
+                  {/* CTA */}
+                  <div className="flex items-center justify-center">
+                    <button
+                      className={`px-6 py-3 ${colorClasses.icon} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full`}
+                    >
+                      Start Learning
+                    </button>
                   </div>
                 </div>
+              );
+            })}
+          </div>
+          
+          {/* Second row - 3 subjects centered */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
+            {subjects.slice(4).map((subject, index) => {
+              const colorClasses = getColorClasses(subject.color);
+              return (
+                <div
+                  key={index + 4}
+                  className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 lg:p-8 border-2 ${colorClasses.border} ${colorClasses.hover} card-hover`}
+                >
+                  {/* Header */}
+                  <div className="flex items-center justify-center mb-6">
+                    <div
+                      className={`w-16 h-16 ${colorClasses.icon} rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg`}
+                    >
+                      {subject.icon}
+                    </div>
+                  </div>
 
-                <div className="flex items-center justify-between">
-                  <button
-                    className={`px-6 py-3 ${colorClasses.icon} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
-                  >
-                    Start Learning
-                  </button>
-                  <Link
-                    href={`/subjects/${subject.slug}`}
-                    className={`${colorClasses.text} hover:underline font-medium transition-colors`}
-                  >
-                    View Details →
-                  </Link>
+                  {/* Content */}
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors text-center">
+                    {subject.name}
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-center text-sm lg:text-base">
+                    {subject.description}
+                  </p>
+
+                  {/* Topics */}
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-gray-700 mb-2 text-center">
+                      Key Topics:
+                    </div>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {subject.topics.map((topic, topicIndex) => (
+                        <span
+                          key={topicIndex}
+                          className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.text} text-xs font-medium rounded-full`}
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="flex items-center justify-center">
+                    <button
+                      className={`px-6 py-3 ${colorClasses.icon} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full`}
+                    >
+                      Start Learning
+                    </button>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div> */}
+              );
+            })}
+          </div>
+         </div>
 
         {/* Bottom CTA Section */}
         <div className="bg-white rounded-3xl shadow-sm p-8 lg:p-12 text-center">

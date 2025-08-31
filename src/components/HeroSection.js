@@ -17,7 +17,7 @@ import StudentRegistrationForm from "./StudentRegistrationForm";
 
 import TeacherApplicationForm from "./TeacherApplicationForm";
 
-const HeroSection = () => {
+const HeroSection = ({ onOpenModal }) => {
   const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
   const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
 
@@ -32,7 +32,7 @@ const HeroSection = () => {
         </div>
 
         <div className="relative container mx-auto px-4 myPadY">
-          <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
+          <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh] gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12">
             {/* Left Content */}
             <div className="lg:w-1/2 mb-12 lg:mb-0 z-10">
               {/* Badge */}
@@ -41,12 +41,12 @@ const HeroSection = () => {
                 1-to-1 Online Coaching
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold md:font-bold text-gray-900 mb-6 leading-tight font-poppins">
+              <h1 className="text-4xl md:text-4xl lg:text-5xl font-semibold md:font-bold text-gray-900 mb-6 leading-tight font-poppins">
                 Help Your Child Succeed with
                 <span className=" bg-gradient-to-r from-blue-600 ml-2 to-purple-600 bg-clip-text text-transparent">
                   One-on-One Expert Tutoring
                 </span>
-                <span className="text-4xl lg:text-5xl">
+                <span className="text-3xl md:text-4xl lg:text-5xl">
                   {" "}
                   from Aristocrafters
                 </span>
@@ -79,29 +79,6 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="w-auto flex gap-4">
-                <button
-                  onClick={() => setIsStudentModalOpen(true)}
-                  className="w-auto group relative px-10 py-4  cursor-pointer bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-nunito"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    <FaGraduationCap className="text-lg" />
-                    Enroll Now
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </button>
-                {/* <button
-                  onClick={() => setIsTeacherModalOpen(true)}
-              
-              className="px-10 py-4 border-2 cursor-pointer border-gray-300 text-gray-700 rounded-2xl font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300 bg-white/80 backdrop-blur-sm font-nunito">
-                <span className="flex items-center gap-2">
-                  <FaBookOpen className="text-lg" />
-                  Join as Teacher
-                </span>
-              </button> */}
-              </div>
-
               {/* Highlights */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 text-sm">
                 <div className="flex items-center gap-3 text-gray-700 p-3 bg-white/100 rounded-xl backdrop-blur-sm">
@@ -132,77 +109,61 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Right Content - Hero Image/Illustration */}
+            {/* Right Content - Clean Free Demo Card */}
             <div className="lg:w-1/2 relative z-10">
-              <div className="relative">
-                {/* Main Card */}
-                <div className="bg-white rounded-3xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        <FaChalkboardTeacher className="text-blue-600 text-xl" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900 font-poppins">
-                          Live Session
-                        </div>
-                        <div className="text-sm text-gray-500 font-nunito">
-                          Mathematics
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-                      <span className="text-sm text-gray-600 font-nunito">
-                        Online
-                      </span>
-                    </div>
+              <div className="bg-gradient-to-br from-white/70 to-white/40 backdrop-blur-xl border border-white/40 rounded-3xl p-10">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-2 bg-green-50/70 text-green-800 px-5 py-2 rounded-full text-sm font-semibold">
+                    <FaStar className="text-green-600" />
+                    <span>FREE Demo Class</span>
                   </div>
+                  <h3 className="text-3xl font-extrabold text-gray-900 mt-4 mb-2">
+                    Experience Our Teaching Excellence
+                  </h3>
+                  <p className="text-gray-600 text-base">
+                    No commitment required • 45-minute session
+                  </p>
+                </div>
 
-                  <div className="bg-gray-50 rounded-2xl p-6 mb-6">
-                    <div className="text-2xl font-bold text-gray-900 mb-2 font-poppins">
-                      Quadratic Equations
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
-                      <div
-                        className="bg-blue-600 h-2 rounded-full"
-                        style={{ width: "75%" }}
-                      ></div>
-                    </div>
-                    <div className="text-sm text-gray-600 font-nunito">
-                      Progress: 75% Complete
-                    </div>
+                {/* Benefits */}
+                <div className="grid gap-4 mb-8">
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <FaGraduationCap className="text-blue-500 text-xl" />
+                    <span className="text-base font-medium">
+                      Expert qualified teachers
+                    </span>
                   </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex -space-x-2">
-                      <div className="w-8 h-8 bg-blue-500 text-sm flex items-center justify-center rounded-full border-2 border-white"><p>M</p></div>
-                      <div className="w-8 h-8 bg-green-500 text-sm flex items-center justify-center rounded-full border-2 border-white"><p>S</p></div>
-                      <div className="w-8 h-8 bg-purple-500 text-sm flex items-center justify-center rounded-full border-2 border-white"><p>P</p></div>
-                      <div className="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs font-medium text-gray-600">
-                        +5
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => setIsStudentModalOpen(true)}
-                      className="px-6 py-2 bg-blue-600 text-white rounded-md cursor-pointer text-sm font-medium hover:bg-blue-700 transition-colors font-nunito"
-                    >
-                      Join Now
-                    </button>
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <FaBookOpen className="text-purple-500 text-xl" />
+                    <span className="text-base font-medium">
+                      Personalized learning approach
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <FaClock className="text-green-500 text-xl" />
+                    <span className="text-base font-medium">
+                      Flexible scheduling
+                    </span>
                   </div>
                 </div>
 
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -left-4 bg-yellow-400 rounded-2xl p-4 shadow-lg animate-bounce">
-                  <FaStar className="text-2xl text-white" />
-                </div>
+                {/* CTA Button */}
+                <button
+                  onClick={() => setIsStudentModalOpen(true)}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 
+      text-white font-semibold py-4 px-6 rounded-2xl text-lg transition-all duration-300 hover:scale-[1.02]"
+                >
+                  Book Your FREE Demo Now
+                </button>
 
-                {/* <div className="absolute -bottom-4 -right-4 bg-green-500 rounded-2xl p-4 shadow-lg animate-pulse">
-                <FaChartLine className="text-2xl text-white" />
-              </div> */}
-
-                <div className="absolute top-1/2 -left-8 bg-purple-500 rounded-full p-3 shadow-lg">
-                  <FaBullseye className="text-xl text-white" />
+                {/* Trust Indicators */}
+                <div className="mt-6 text-center">
+                  <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-500">
+                    <span>✓ No Credit Card</span>
+                    <span>✓ Instant Booking</span>
+                    <span>✓ 100% Free</span>
+                  </div>
                 </div>
               </div>
             </div>
