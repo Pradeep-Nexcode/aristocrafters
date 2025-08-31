@@ -25,7 +25,10 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 cursor-pointer">
+            <Link
+              href="/"
+              className="flex items-center space-x-3 cursor-pointer"
+            >
               <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AC</span>
               </div>
@@ -46,6 +49,19 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+
+              <a
+                href="#feedback"
+                className="text-black hover:text-gray-600 font-medium transition-colors duration-200"
+              >
+                Feedback
+              </a>
+              <a
+                href="#faq"
+                className="text-black hover:text-gray-600 font-medium transition-colors duration-200"
+              >
+                FAQ
+              </a>
             </nav>
 
             {/* Contact Info & CTA */}

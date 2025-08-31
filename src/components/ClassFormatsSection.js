@@ -90,7 +90,7 @@ const ClassFormatsSection = () => {
             Class Formats
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Choose Your
+            {/* Choose Your */}
             <span className="block text-blue-600">Learning Style</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">

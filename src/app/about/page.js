@@ -1,10 +1,11 @@
 "use client";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import Link from "next/link";
 import React from "react";
-import { 
-  FaBookOpen, 
-  FaUsers, 
-  FaStar, 
+import {
+  FaBookOpen,
+  FaUsers,
+  FaStar,
   FaGraduationCap,
   FaBullseye,
   FaHandshake,
@@ -19,7 +20,7 @@ import {
   FaPhone,
   FaChalkboardTeacher,
   FaFlask,
-  FaBriefcase
+  FaBriefcase,
 } from "react-icons/fa";
 
 const AboutPage = () => {
@@ -50,18 +51,18 @@ const AboutPage = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-6xl md:text-7xl font-black mb-8 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-black mb-8 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 drop-shadow-sm">
-                Crafting Excellence
+                Empowering Young Learners with
               </span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-                in Education
+                Aristocrafters
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-md md:text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
               For over{" "}
               <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                 15 years
@@ -161,26 +162,26 @@ const AboutPage = () => {
                 {/* Key Points */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                   {[
-                      {
-                        icon: <FaLaptop />,
-                        title: "Live Online Classes",
-                        desc: "Interactive sessions with expert teachers",
-                      },
-                      {
-                        icon: <FaBullseye />,
-                        title: "Personalized Learning",
-                        desc: "Tailored approach for each student",
-                      },
-                      {
-                        icon: <FaHandshake />,
-                        title: "Student-Centric",
-                        desc: "Your success is our priority",
-                      },
-                      {
-                        icon: <FaGlobe />,
-                        title: "Anywhere Access",
-                        desc: "Learn from home, anytime, anywhere",
-                      },
+                    {
+                      icon: <FaLaptop />,
+                      title: "Live Online Classes",
+                      desc: "Interactive sessions with expert teachers",
+                    },
+                    {
+                      icon: <FaBullseye />,
+                      title: "Personalized Learning",
+                      desc: "Tailored approach for each student",
+                    },
+                    {
+                      icon: <FaHandshake />,
+                      title: "Student-Centric",
+                      desc: "Your success is our priority",
+                    },
+                    {
+                      icon: <FaGlobe />,
+                      title: "Anywhere Access",
+                      desc: "Learn from home, anytime, anywhere",
+                    },
                   ].map((point, index) => (
                     <div
                       key={index}
@@ -202,7 +203,9 @@ const AboutPage = () => {
               <div className="relative">
                 <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
                   <div className="bg-white/20 backdrop-blur-md rounded-2xl p-8 text-center">
-                    <div className="text-8xl mb-6"><FaLaptop /></div>
+                    <div className="text-8xl mb-6">
+                      <FaLaptop />
+                    </div>
                     <h3 className="text-2xl font-black text-white mb-4">
                       Online Learning
                     </h3>
@@ -231,6 +234,8 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+
+      <WhyChooseUsSection />
 
       {/* Team Section */}
       {/* <section className="myPadY bg-white/50 backdrop-blur-sm">
@@ -349,7 +354,9 @@ const AboutPage = () => {
             {/* Section Header */}
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/30 mb-6">
-                <span className="text-lg mr-2"><FaGem /></span>
+                <span className="text-lg mr-2">
+                  <FaGem />
+                </span>
                 <span className="text-white font-bold text-sm">OUR VALUES</span>
               </div>
 
@@ -415,7 +422,9 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white/80 flex flex-col items-center justify-center backdrop-blur-md rounded-3xl p-12 border border-white/20 shadow-md">
-              <div className="text-6xl mb-8 text-black"><FaRocket /></div>
+              <div className="text-6xl mb-8 text-black">
+                <FaRocket />
+              </div>
               <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
                 Ready to Start Your Journey?
               </h2>
@@ -433,7 +442,9 @@ const AboutPage = () => {
                     href="/contact"
                     className="relative z-10 flex items-center justify-center space-x-2"
                   >
-                    <span className="text-white drop-shadow-lg"><FaPhone /></span>
+                    <span className="text-white drop-shadow-lg">
+                      <FaPhone />
+                    </span>
                     <span className="text-white drop-shadow-lg">
                       Contact Us Today
                     </span>
@@ -457,4 +468,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-

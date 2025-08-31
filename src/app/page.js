@@ -27,15 +27,18 @@ export default function Home() {
 
   return (
     <div className="pt-20">
-      <HeroSection onOpenModal={() => setIsModalOpen(true)} />
-      <AboutSection />
-      <SubjectsSection />
-      <WhyChooseUsSection />
+      <HeroSection   onOpenModal={handleOpenModal} />
+      {/* <AboutSection /> */}
       <ClassFormatsSection />
+      <SubjectsSection />
+
       <LearningApproachSection />
+
+      {/* <WhyChooseUsSection /> */}
+
       <TestimonialsSection />
-      <FreeDemoSection onOpenModal={handleOpenModal} />
-      <RegistrationCTASection onOpenModal={handleOpenModal} />
+      {/* <FreeDemoSection onOpenModal={handleOpenModal} /> */}
+      {/* <RegistrationCTASection onOpenModal={handleOpenModal} /> */}
       <FAQSection />
       {/* <CTASection /> */}
       

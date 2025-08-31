@@ -150,27 +150,7 @@ const FreeDemoSection = ({ onOpenModal }) => {
             </div>
           </div>
 
-          {/* Stats Section */}
-          {/* <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">50K+</div>
-              <div className="text-gray-600">Happy Students</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">98%</div>
-              <div className="text-gray-600">Success Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">500+</div>
-              <div className="text-gray-600">Expert Teachers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 mb-2">
-                4.9<FaStar className="inline ml-1" />
-              </div>
-              <div className="text-gray-600">Average Rating</div>
-            </div>
-          </div> */}
+        
         </div>
       </div>
     </section>
