@@ -62,6 +62,13 @@ const Header = () => {
               >
                 FAQ
               </a>
+              <button
+                onClick={() => setIsTeacherModalOpen(true)} 
+                className="text-black hover:text-gray-600 font-medium transition-colors duration-200"
+
+              >
+                Apply as Teacher
+              </button>
             </nav>
 
             {/* Contact Info & CTA */}
@@ -139,6 +146,28 @@ const Header = () => {
                     {item.name}
                   </Link>
                 ))}
+
+                <a
+                  href="#feedback"
+                  className="block py-3 px-4 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
+                >
+                  Feedback
+                </a>
+
+                <a
+                  href="#faq"
+                  className="block py-3 px-4 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
+                >
+                  FAQ
+                </a>
+
+                <button
+                  onClick={() => setIsTeacherModalOpen(true)}
+                  className="block py-3 px-4 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
+                >
+                  Apply as Teacher
+                </button>
+
 
                 {/* Mobile Contact Info */}
                 <div className="pt-4 mt-4 border-t border-gray-200">

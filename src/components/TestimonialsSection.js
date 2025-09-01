@@ -3,68 +3,38 @@ import { FaBullseye, FaBook, FaChalkboardTeacher, FaBolt } from "react-icons/fa"
 
 
 const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Parent of Emma (Grade 8)",
-      subject: "Mathematics",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      text: "The tutors are absolutely amazing! My daughter's confidence in math has improved dramatically. She actually looks forward to her sessions now and her grades have gone from C to A+.",
-      improvement: "+2 Grades",
-      duration: "6 months"
-    },
-    {
-      name: "Michael Chen",
-      role: "Parent of Alex (Grade 10)",
-      subject: "Physics & Chemistry",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      text: "Excellent personalized attention and teaching methodology. Alex's understanding of complex concepts has improved significantly, and the flexible scheduling works perfectly for our busy family.",
-      improvement: "95% Score",
-      duration: "8 months"
-    },
-    {
-      name: "Priya Patel",
-      role: "Parent of Arjun (Grade 6)",
-      subject: "English & Science",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      text: "The interactive online sessions keep my son completely engaged. The progress reports help me track his improvement every week. Highly recommend to all parents!",
-      improvement: "Top 10%",
-      duration: "4 months"
-    },
-    // {
-    //   name: "David Wilson",
-    //   role: "Parent of Sophie (Grade 9)",
-    //   subject: "Mathematics",
-    //   image: "/api/placeholder/60/60",
-    //   rating: 5,
-    //   text: "Outstanding results! Sophie was struggling with algebra, but now she's one of the top performers in her class. The one-on-one attention made all the difference.",
-    //   improvement: "A+ Grade",
-    //   duration: "5 months"
-    // },
-    // {
-    //   name: "Lisa Rodriguez",
-    //   role: "Parent of Carlos (Grade 7)",
-    //   subject: "All Subjects",
-    //   image: "/api/placeholder/60/60",
-    //   rating: 5,
-    //   text: "Comprehensive support across all subjects. Carlos has become more confident and independent in his studies. The tutors really care about each student's success.",
-    //   improvement: "Overall A",
-    //   duration: "7 months"
-    // },
-    // {
-    //   name: "Amanda Foster",
-    //   role: "Parent of Jake (Grade 11)",
-    //   subject: "Advanced Math",
-    //   image: "/api/placeholder/60/60",
-    //   rating: 5,
-    //   text: "Preparing for college entrance exams was stressful, but the expert guidance and structured approach helped Jake achieve his target scores. Couldn't be happier!",
-    //   improvement: "SAT 1450+",
-    //   duration: "10 months"
-    // }
-  ];
+ const testimonials = [
+  {
+    name: "Lakshmi Narayanan",
+    role: "Parent of Kavin (Grade 8)",
+    subject: "Mathematics",
+    image: "/api/placeholder/60/60",
+    rating: 5,
+    text: "Before joining, my son was very weak in maths. After these one-to-one classes, he is doing sums with full confidence. From just pass marks, now he is scoring above 90%.",
+    improvement: "+2 Grades",
+    duration: "6 months"
+  },
+  {
+    name: "Suresh Kumar",
+    role: "Parent of Harini (Grade 10)",
+    subject: "Physics & Chemistry",
+    image: "/api/placeholder/60/60",
+    rating: 5,
+    text: "The sir explains very clearly in Tamil and English, so my daughter is understanding tough science lessons easily. Earlier she was struggling, now she got 95% in board model exam.",
+    improvement: "95% Score",
+    duration: "8 months"
+  },
+  {
+    name: "Meena Ramesh",
+    role: "Parent of Arav (Grade 6)",
+    subject: "English & Science",
+    image: "/api/placeholder/60/60",
+    rating: 5,
+    text: "Classes are very interactive. My son enjoys the online sessions, and I can see his improvement every week. Teachers are very patient and friendly. We are very happy with the progress.",
+    improvement: "Top 10%",
+    duration: "4 months"
+  }
+];
 
 const stats = [
   {
