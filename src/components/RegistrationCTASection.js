@@ -6,6 +6,7 @@ import StudentRegistrationForm from './StudentRegistrationForm';
 import TeacherApplicationForm from './TeacherApplicationForm';
 
 const RegistrationCTASection = ({ onOpenModal }) => {
+  
   const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
   const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
 
