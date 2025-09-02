@@ -149,6 +149,7 @@ const Header = () => {
 
                 <a
                   href="#feedback"
+                  onClick={() => setIsMenuOpen(false)}
                   className="block py-3 px-4 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
                 >
                   Feedback
@@ -156,13 +157,17 @@ const Header = () => {
 
                 <a
                   href="#faq"
+                  onClick={() => setIsMenuOpen(false)}
                   className="block py-3 px-4 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
                 >
                   FAQ
                 </a>
 
                 <button
-                  onClick={() => setIsTeacherModalOpen(true)}
+                  onClick={() => {
+                    setIsTeacherModalOpen(true);
+                    setIsMenuOpen(false);
+                  }}
                   className="block py-3 px-4 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
                 >
                   Apply as Teacher
@@ -186,13 +191,19 @@ const Header = () => {
 
                   <div className="flex flex-col gap-2 mt-3">
                     <button
-                      onClick={() => setIsStudentModalOpen(true)}
+                      onClick={() => {
+                        setIsStudentModalOpen(true);
+                        setIsMenuOpen(false);
+                      }}
                       className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
                     >
                       Start Learning
                     </button>
                     <button
-                      onClick={() => setIsTeacherModalOpen(true)}
+                      onClick={() => {
+                        setIsTeacherModalOpen(true);
+                        setIsMenuOpen(false);
+                      }}
                       className="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium"
                     >
                       Teach With Us

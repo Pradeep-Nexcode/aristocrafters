@@ -57,7 +57,7 @@ const HeroSection = ({ onOpenModal }) => {
                    1-on-1  Expert Tutoring
                   </span>
                 </span>
-                <span className="block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-2 text-gray-700">
+                <span className="block text-3xl  lg:text-4xl xl:text-5xl mt-2 text-gray-700">
                   from Aristocrafters
                 </span>
               </h1>
@@ -113,15 +113,15 @@ const HeroSection = ({ onOpenModal }) => {
               <div className="flex flex-col sm:flex-row gap-4 mt-8 lg:hidden">
                 <button
                   onClick={() => setIsStudentModalOpen(true)}
-                  className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-2xl text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-2xl text-base transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md flex items-center justify-center gap-2"
                 >
                   <FaPlay className="text-sm" />
                   Book FREE Demo
                 </button>
-                <button className="flex-1 bg-white/80 hover:bg-white text-gray-800 font-semibold py-4 px-6 rounded-2xl text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border border-gray-200 flex items-center justify-center gap-2">
+                <a href="#classformats" className="flex-1 bg-white/80 hover:bg-white text-gray-800 font-semibold py-4 px-6 rounded-2xl text-base transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md border border-gray-200 flex items-center justify-center gap-2">
                   <FaArrowRight className="text-sm" />
                   Learn More
-                </button>
+                </a>
               </div>
             </div>
 

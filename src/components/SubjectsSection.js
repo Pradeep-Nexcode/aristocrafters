@@ -248,20 +248,20 @@ const SubjectsSection = () => {
               </div>
 
               {/* Stats Badge */}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
+              {/* <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
                 <div className="flex items-center gap-1 text-xs font-medium">
                   <FaUsers className="text-blue-600" />
                   <span>{subject.students}</span>
                 </div>
-              </div>
+              </div> */}
 
               {/* Rating Badge */}
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
+              {/* <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
                 <div className="flex items-center gap-1 text-xs font-medium">
                   <FaStar className="text-yellow-500" />
                   <span>{subject.rating}</span>
                 </div>
-              </div>
+              </div> */}
 
               {/* Content - Bottom Half */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
