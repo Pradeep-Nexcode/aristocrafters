@@ -87,7 +87,7 @@ const stats = [
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-md font-medium mb-4">
             {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> */}
             <TbBrandStorytel className="mr-2" />
-            Success Stories
+           Feedback
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             What Parents & Students
@@ -146,8 +146,7 @@ const stats = [
         </div>
 
         {/* Trust Indicators */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
-          {/* Background Pattern */}
+        {/* <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-4 right-4 w-32 h-32 border border-white rounded-full"></div>
             <div className="absolute bottom-4 left-4 w-24 h-24 border border-white rounded-full"></div>
@@ -164,7 +163,6 @@ const stats = [
               </p>
             </div>
             
-            {/* Stats Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center flex flex-col items-center justify-center group">
@@ -181,8 +179,7 @@ const stats = [
               ))}
             </div>
             
-            {/* CTA */}
-              {/* <div className="text-center">
+              <div className="text-center">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     Read More Reviews
@@ -191,9 +188,9 @@ const stats = [
                     Share Your Story
                   </button>
                 </div>
-              </div> */}
+              </div>  
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
