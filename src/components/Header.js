@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaHome, FaBook, FaPhone } from "react-icons/fa";
 import StudentRegistrationForm from "./StudentRegistrationForm";
 import TeacherApplicationForm from "./TeacherApplicationForm";
@@ -9,6 +10,35 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
   const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
+  const router = useRouter();
+
+  // Handle smooth scrolling to sections when navigating with hash
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      }
+    };
+
+    // Handle hash navigation on page load
+    handleHashNavigation();
+
+    // Handle hash changes
+    window.addEventListener('hashchange', handleHashNavigation);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashNavigation);
+    };
+  }, []);
 
   const navigationItems = [
     { name: "Home", href: "/", icon: <FaHome /> },
@@ -50,18 +80,18 @@ const Header = () => {
                 </Link>
               ))}
 
-              <a
-                href="#feedback"
+              <Link
+                href="/#feedback"
                 className="text-black hover:text-gray-600 font-medium transition-colors duration-200"
               >
                 Feedback
-              </a>
-              <a
-                href="#faq"
+              </Link>
+              <Link
+                href="/#faq"
                 className="text-black hover:text-gray-600 font-medium transition-colors duration-200"
               >
                 FAQ
-              </a>
+              </Link>
               <button
                 onClick={() => setIsTeacherModalOpen(true)} 
                 className="text-black hover:text-gray-600 font-medium transition-colors duration-200"
@@ -147,21 +177,21 @@ const Header = () => {
                   </Link>
                 ))}
 
-                <a
-                  href="#feedback"
+                <Link
+                  href="/#feedback"
                   onClick={() => setIsMenuOpen(false)}
                   className="block py-3 px-4 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
                 >
                   Feedback
-                </a>
+                </Link>
 
-                <a
-                  href="#faq"
+                <Link
+                  href="/#faq"
                   onClick={() => setIsMenuOpen(false)}
                   className="block py-3 px-4 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
                 >
                   FAQ
-                </a>
+                </Link>
 
                 <button
                   onClick={() => {

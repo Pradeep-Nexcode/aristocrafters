@@ -1,30 +1,33 @@
 import React from 'react';
- 
+import Link from 'next/link';
 import { CiFaceSmile } from "react-icons/ci";
-  import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Subjects', href: '#subjects' },
-    { name: 'Why Choose Us', href: '#why-choose-us' },
-    { name: 'Testimonials', href: '#testimonials' }
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Our Subjects', href: '/#subjects' },
+    { name: 'Why Choose Us', href: '/about#why-choose-us' },
+    { name: 'Feedback', href: '/#feedback' }
   ];
 
   const subjects = [
-    { name: 'Tamil', href: '#tamil' },
-    { name: 'Mathematics', href: '#math' },
-    { name: 'English', href: '#english' },
-    { name: 'Science', href: '#science' },
-    { name: 'Social Studies', href: '#social' },
+    { name: 'Tamil', href: '/#subjects' },
+    { name: 'Mathematics', href: '/#subjects' },
+    { name: 'English', href: '/#subjects' },
+    { name: 'Science', href: '/#subjects' },
+    { name: 'Social Science', href: '/#subjects' },
+    { name: 'Hindi', href: '/#subjects' },
+    { name: "Sanskrit", href: '/#subjects' }
   ];
 
   const resources = [
-    { name: 'Study Materials', href: '#materials' },
-    { name: 'Practice Tests', href: '#tests' },
-    { name: 'Video Lectures', href: '#videos' },
-    { name: 'Assignment Help', href: '#assignments' },
-    { name: 'Exam Preparation', href: '#exam-prep' }
+    { name: 'Study Materials', href: '/#subjects' },
+    { name: 'Practice Tests', href: '/#subjects' },
+    { name: 'Video Lectures', href: '/#subjects' },
+    { name: 'Assignment Help', href: '/contact' },
+    { name: 'Exam Preparation', href: '/#subjects' }
   ];
 
  const socialLinks = [
@@ -128,13 +131,13 @@ return (
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a 
+                    <Link 
                       href={link.href} 
                       className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -146,13 +149,13 @@ return (
               <ul className="space-y-3">
                 {subjects.map((subject) => (
                   <li key={subject.name}>
-                    <a 
+                    <Link 
                       href={subject.href} 
                       className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {subject.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -164,13 +167,12 @@ return (
               <ul className="space-y-3">
                 {resources.map((resource) => (
                   <li key={resource.name}>
-                    <a 
-                      href={resource.href} 
+                    <p 
                       className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {resource.name}
-                    </a>
+                    </p>
                   </li>
                 ))}
               </ul>

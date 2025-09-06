@@ -400,10 +400,9 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="myPadY bg-white/50 backdrop-blur-sm">
+      {/* <section className="myPadY bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {/* Section Header */}
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200/30 rounded-lg shadow-sm mb-6">
                 <FaQuestionCircle className="w-4 h-4 mr-2 text-yellow-600" />
@@ -419,7 +418,6 @@ const ContactPage = () => {
               </p>
             </div>
 
-            {/* FAQ Items */}
             <div className="space-y-4">
               {[
                 {
@@ -459,7 +457,7 @@ const ContactPage = () => {
               ))}
             </div>
 
-            {/* More Questions CTA */}
+         
             <div className="text-center mt-12">
               <p className="text-gray-600 mb-4">Still have questions?</p>
               <a href='#contact-us-section' className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
@@ -469,7 +467,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
