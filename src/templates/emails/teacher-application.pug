@@ -208,10 +208,13 @@ html(lang="en")
                 each subject in subjects
                   .subject-tag #{subject}
             .info-item.full-width
-              .info-label Classes Can Teach
+              .info-label Subjects Can Teach
               .classes-list
-                each cls in classes
-                  .class-tag Class #{cls}
+                if subjects && subjects.length > 0
+                  each subject in subjects
+                    .class-tag #{subject}
+                else
+                  .class-tag No subjects specified
         
         if experience && parseInt(experience) >= 3
           .experience-highlight
