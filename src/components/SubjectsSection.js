@@ -16,6 +16,7 @@ import {
   FaArrowRight,
   FaUsers,
   FaPlay,
+  FaSpinner,
 } from "react-icons/fa";
 import Modal from "./Modal";
 import { motion } from "framer-motion";
@@ -23,6 +24,7 @@ import StudentRegistrationForm from "./StudentRegistrationForm";
 
 const SubjectsSection = () => {
   const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -43,23 +45,42 @@ const SubjectsSection = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Custom Subject Request:", formData);
-    alert(
-      "Thank you! We will contact you soon regarding your custom subject request."
-    );
-    setIsModalOpen(false);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      grade: "",
-      preferredTime: "",
-      message: "",
-    });
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('/api/custom-subject-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Thank you! We will contact you soon regarding your custom subject request.");
+        setIsModalOpen(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          grade: "",
+          preferredTime: "",
+          message: "",
+        });
+      } else {
+        alert(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert("Network error. Please check your connection and try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Form validation function
@@ -594,11 +615,20 @@ const SubjectsSection = () => {
                 </button>
                 <button
                   type="submit"
-                  disabled={!isFormValid()}
+                  disabled={!isFormValid() || isLoading}
                   className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                 >
-                  <FaPaperPlane className="text-sm" />
-                  Send Request
+                  {isLoading ? (
+                    <>
+                      <FaSpinner className="text-sm animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <FaPaperPlane className="text-sm" />
+                      Send Request
+                    </>
+                  )}
                 </button>
               </div>
             </form>

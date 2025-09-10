@@ -5,18 +5,19 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
   try {
-    const { 
-      name, 
-      email, 
-      phone, 
-      qualification, 
-      experience, 
-      subjects, 
-      preferredMode, 
-      availability, 
-      expectedSalary, 
-      additionalInfo 
-    } = await request.json();
+    const formData = await request.formData();
+    
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const qualification = formData.get('qualification');
+    const experience = formData.get('experience');
+    const subjects = JSON.parse(formData.get('subjects') || '[]');
+    const preferredMode = formData.get('preferredMode');
+    const availability = formData.get('availability');
+    const expectedSalary = formData.get('expectedSalary');
+    const additionalInfo = formData.get('additionalInfo');
+    const resumeFile = formData.get('resume');
 
     // Validate required fields
     if (!name || !email || !phone || !qualification || !subjects || subjects.length === 0) {
@@ -43,12 +44,26 @@ export async function POST(request) {
       phone,
       qualification,
       experience,
-      subjects,
+      subjects: subjects || [],
       preferredMode,
       availability,
       expectedSalary,
-      additionalInfo
+      additionalInfo,
+      hasResume: resumeFile && resumeFile.size > 0,
+      resumeFileName: resumeFile ? resumeFile.name : null,
+      timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
     });
+
+    // Prepare attachments
+    const attachments = [];
+    if (resumeFile && resumeFile.size > 0) {
+      const buffer = Buffer.from(await resumeFile.arrayBuffer());
+      attachments.push({
+        filename: resumeFile.name,
+        content: buffer,
+        contentType: resumeFile.type
+      });
+    }
 
     // Mail Options
     const mailOptions = {
@@ -56,6 +71,7 @@ export async function POST(request) {
       to: process.env.CLIENT_EMAIL,
       subject: `New Teacher Application: ${name}`,
       html: htmlTemplate,
+      attachments: attachments
     };
 
     await transporter.sendMail(mailOptions);
