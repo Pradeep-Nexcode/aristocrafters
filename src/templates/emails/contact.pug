@@ -1,0 +1,133 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Contact Form Submission
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        overflow: hidden;
+      }
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+      .header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+      .header p {
+        font-size: 16px;
+        opacity: 0.9;
+      }
+      .content {
+        padding: 40px 30px;
+      }
+      .field-group {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+      }
+      .field-label {
+        font-weight: 600;
+        color: #667eea;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+      }
+      .field-value {
+        font-size: 16px;
+        color: #333;
+        word-wrap: break-word;
+      }
+      .message-box {
+        background: #fff;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 10px;
+      }
+      .footer {
+        background: #f8f9fa;
+        padding: 25px 30px;
+        text-align: center;
+        border-top: 1px solid #e9ecef;
+      }
+      .footer p {
+        color: #6c757d;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .timestamp {
+        color: #adb5bd;
+        font-size: 12px;
+        font-style: italic;
+      }
+      .priority-badge {
+        display: inline-block;
+        background: #dc3545;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-left: 10px;
+      }
+  body
+    .container
+      .header
+        h1 📧 New Contact Form Submission
+        p A new inquiry has been received from your website
+        if priority === 'urgent'
+          span.priority-badge URGENT
+      
+      .content
+        .field-group
+          .field-label Personal Information
+          .field-value
+            strong Name: #{name}
+            br
+            strong Email: #{email}
+            br
+            strong Phone: #{phone || 'Not provided'}
+        
+        .field-group
+          .field-label Subject
+          .field-value #{subject}
+        
+        .field-group
+          .field-label Message
+          .message-box
+            .field-value #{message}
+        
+        if additionalInfo
+          .field-group
+            .field-label Additional Information
+            .field-value #{additionalInfo}
+      
+      .footer
+        p This email was sent from the contact form on your website.
+        p Please respond to the customer within 24 hours for best service.
+        .timestamp Received on: #{new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'medium' })}

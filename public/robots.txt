@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aristocrafters.com/sitemap.xml

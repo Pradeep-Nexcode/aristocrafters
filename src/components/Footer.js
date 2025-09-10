@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { CiFaceSmile } from "react-icons/ci";
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+
 const Footer = () => {
   const quickLinks = [
     { name: 'Home', href: '/' },

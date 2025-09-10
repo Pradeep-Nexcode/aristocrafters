@@ -1,0 +1,192 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Student Registration
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 650px;
+        margin: 20px auto;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.1);
+        overflow: hidden;
+      }
+      .header {
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        color: white;
+        padding: 35px;
+        text-align: center;
+      }
+      .header h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .header p {
+        font-size: 16px;
+        opacity: 0.9;
+      }
+      .content {
+        padding: 40px 35px;
+      }
+      .section {
+        margin-bottom: 30px;
+      }
+      .section-title {
+        font-size: 20px;
+        color: #4CAF50;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e8f5e8;
+        font-weight: 600;
+      }
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .info-item {
+        background: #f8fff8;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #4CAF50;
+      }
+      .info-label {
+        font-weight: 600;
+        color: #4CAF50;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 5px;
+      }
+      .info-value {
+        font-size: 15px;
+        color: #333;
+      }
+      .subjects-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .subject-tag {
+        background: #4CAF50;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .full-width {
+        grid-column: 1 / -1;
+      }
+      .footer {
+        background: #f8fff8;
+        padding: 30px 35px;
+        text-align: center;
+        border-top: 1px solid #e8f5e8;
+      }
+      .footer p {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .timestamp {
+        color: #999;
+        font-size: 12px;
+        font-style: italic;
+      }
+      .status-badge {
+        display: inline-block;
+        background: #ff9800;
+        color: white;
+        padding: 6px 15px;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 15px;
+      }
+      @media (max-width: 600px) {
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+  body
+    .container
+      .header
+        h1 🎓 New Student Registration
+        p A new student has registered for classes
+      
+      .content
+        .section
+          .section-title Student Information
+          .info-grid
+            .info-item
+              .info-label Student Name
+              .info-value #{studentName}
+            .info-item
+              .info-label Parent/Guardian
+              .info-value #{parentName}
+            .info-item
+              .info-label Email Address
+              .info-value #{email}
+            .info-item
+              .info-label Phone Number
+              .info-value #{phone}
+            .info-item
+              .info-label Grade/Class
+              .info-value #{grade}
+            .info-item
+              .info-label Board
+              .info-value #{board}
+        
+        .section
+          .section-title Academic Details
+          .info-grid
+            .info-item.full-width
+              .info-label Selected Subjects
+              .subjects-list
+                each subject in subjects
+                  .subject-tag #{subject}
+            .info-item
+              .info-label Preferred Timing
+              .info-value #{timing}
+            .info-item
+              .info-label Class Format
+              .info-value #{classFormat || 'Not specified'}
+        
+        if address
+          .section
+            .section-title Contact Information
+            .info-grid
+              .info-item.full-width
+                .info-label Address
+                .info-value #{address}
+        
+        if additionalRequirements
+          .section
+            .section-title Additional Requirements
+            .info-grid
+              .info-item.full-width
+                .info-label Special Requirements
+                .info-value #{additionalRequirements}
+      
+      .footer
+        .status-badge Pending Review
+        p This registration requires follow-up within 24 hours.
+        p Please contact the student/parent to confirm enrollment details.
+        .timestamp Registered on: #{new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'medium' })}

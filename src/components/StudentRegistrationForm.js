@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaUserGraduate } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
+// Removed EmailJS import - now using Nodemailer API
 import Modal from './Modal';
 
 const StudentRegistrationForm = ({ isOpen, onClose }) => {
@@ -75,32 +75,38 @@ const StudentRegistrationForm = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     
     try {
-      // EmailJS configuration
-      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
-      const templateId = 'student_template'; // Replace with your student template ID
-      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
-      
-      // Prepare template parameters
-      const templateParams = {
-        to_name: 'Aristocrafters Team',
-        from_name: formData.fullName,
-        from_email: formData.email,
+      // Prepare form data for API
+      const registrationData = {
+        studentName: formData.fullName,
+        parentName: formData.fullName, // Using same name for now
+        email: formData.email,
         phone: formData.phone,
         grade: formData.grade,
         board: formData.board,
-        subjects: formData.subjects.join(', '),
-        timing: formData.timing,
-        notes: formData.notes || 'No additional notes provided',
-        reply_to: formData.email
+        subjects: formData.subjects,
+        preferredTiming: formData.timing,
+        additionalInfo: formData.notes || ''
       };
       
-      // Send email using EmailJS
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      // Send to Nodemailer API
+      const response = await fetch('/api/student-registration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(registrationData),
+      });
       
-      setIsSubmitting(false);
-      setSubmitted(true);
+      const result = await response.json();
+      
+      if (response.ok) {
+        setIsSubmitting(false);
+        setSubmitted(true);
+      } else {
+        throw new Error(result.message || 'Registration failed');
+      }
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Registration Error:', error);
       setIsSubmitting(false);
       alert('There was an error sending your registration. Please try again or contact us directly.');
     }
