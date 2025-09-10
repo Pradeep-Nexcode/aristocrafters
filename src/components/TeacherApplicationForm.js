@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaChalkboardTeacher } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
+// Removed EmailJS import - now using Nodemailer API
 import Modal from './Modal';
 
 const TeacherApplicationForm = ({ isOpen, onClose }) => {
@@ -80,32 +80,39 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     
     try {
-      // EmailJS configuration
-      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
-      const templateId = 'teacher_template'; // Replace with your teacher template ID
-      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
-      
-      // Prepare template parameters
-      const templateParams = {
-        to_name: 'Aristocrafters HR Team',
-        from_name: formData.fullName,
-        from_email: formData.email,
+      // Prepare form data for API
+      const applicationData = {
+        name: formData.fullName,
+        email: formData.email,
         phone: formData.phone,
-        subjects: formData.subjects.join(', '),
-        classes: formData.classes.join(', '),
+        qualification: 'Not specified', // Add qualification field if needed
         experience: formData.experience,
-        mode: formData.mode,
-        resume_attached: formData.resume ? 'Yes - ' + formData.resume.name : 'No resume uploaded',
-        reply_to: formData.email
+        subjects: formData.subjects,
+        preferredMode: formData.mode,
+        availability: formData.classes.join(', '),
+        expectedSalary: 'Not specified', // Add salary field if needed
+        additionalInfo: formData.resume ? `Resume uploaded: ${formData.resume.name}` : 'No resume uploaded'
       };
       
-      // Send email using EmailJS
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      // Send to Nodemailer API
+      const response = await fetch('/api/teacher-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(applicationData),
+      });
       
-      setIsSubmitting(false);
-      setSubmitted(true);
+      const result = await response.json();
+      
+      if (response.ok) {
+        setIsSubmitting(false);
+        setSubmitted(true);
+      } else {
+        throw new Error(result.message || 'Application submission failed');
+      }
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Application Error:', error);
       setIsSubmitting(false);
       alert('There was an error sending your application. Please try again or contact us directly.');
     }

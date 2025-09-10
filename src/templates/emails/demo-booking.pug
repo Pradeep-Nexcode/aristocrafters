@@ -1,0 +1,268 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Demo Class Booking
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 650px;
+        margin: 20px auto;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.1);
+        overflow: hidden;
+      }
+      .header {
+        background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+        color: white;
+        padding: 35px;
+        text-align: center;
+      }
+      .header h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .header p {
+        font-size: 16px;
+        opacity: 0.9;
+      }
+      .content {
+        padding: 40px 35px;
+      }
+      .section {
+        margin-bottom: 30px;
+      }
+      .section-title {
+        font-size: 20px;
+        color: #FF6B6B;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #ffebee;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+      .section-icon {
+        margin-right: 10px;
+        font-size: 22px;
+      }
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .info-item {
+        background: #fff8f8;
+        padding: 18px;
+        border-radius: 8px;
+        border-left: 4px solid #FF6B6B;
+      }
+      .info-label {
+        font-weight: 600;
+        color: #FF6B6B;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+      }
+      .info-value {
+        font-size: 15px;
+        color: #333;
+        word-wrap: break-word;
+      }
+      .subjects-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .subject-tag {
+        background: #FF6B6B;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .full-width {
+        grid-column: 1 / -1;
+      }
+      .urgent-notice {
+        background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #ff9800;
+        margin: 20px 0;
+        text-align: center;
+      }
+      .urgent-notice h3 {
+        color: #e65100;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+      .urgent-notice p {
+        color: #bf360c;
+        font-weight: 500;
+      }
+      .action-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 25px;
+      }
+      .btn {
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+      .btn-primary {
+        background: #4CAF50;
+        color: white;
+      }
+      .btn-secondary {
+        background: #2196F3;
+        color: white;
+      }
+      .footer {
+        background: #fff8f8;
+        padding: 30px 35px;
+        text-align: center;
+        border-top: 1px solid #ffebee;
+      }
+      .footer p {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .timestamp {
+        color: #999;
+        font-size: 12px;
+        font-style: italic;
+      }
+      .status-badge {
+        display: inline-block;
+        background: #ff9800;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 15px;
+      }
+      .priority-high {
+        background: #f44336;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      @media (max-width: 600px) {
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+        .action-buttons {
+          flex-direction: column;
+        }
+      }
+  body
+    .container
+      .header
+        h1 🎯 Demo Class Request
+        p A potential student wants to experience your teaching
+      
+      .content
+        .urgent-notice
+          h3 ⏰ Immediate Action Required
+          p This demo request should be scheduled within 24 hours for maximum conversion
+        
+        .section
+          .section-title
+            span.section-icon 👨‍🎓
+            | Student Information
+          .info-grid
+            .info-item
+              .info-label Student Name
+              .info-value #{studentName}
+            .info-item
+              .info-label Parent/Guardian
+              .info-value #{parentName}
+            .info-item
+              .info-label Email Address
+              .info-value #{email}
+            .info-item
+              .info-label Phone Number
+              .info-value #{phone}
+            .info-item
+              .info-label Grade/Class
+              .info-value #{grade}
+            .info-item
+              .info-label Current School
+              .info-value #{school || 'Not specified'}
+        
+        .section
+          .section-title
+            span.section-icon 📚
+            | Demo Requirements
+          .info-grid
+            .info-item.full-width
+              .info-label Subjects of Interest
+              .subjects-list
+                each subject in subjects
+                  .subject-tag #{subject}
+            .info-item
+              .info-label Preferred Date
+              .info-value #{preferredDate || 'Flexible'}
+            .info-item
+              .info-label Preferred Time
+              .info-value #{preferredTime || 'To be discussed'}
+        
+        if specificRequirements
+          .section
+            .section-title
+              span.section-icon 📝
+              | Special Requirements
+            .info-grid
+              .info-item.full-width
+                .info-label Additional Notes
+                .info-value #{specificRequirements}
+        
+        if previousExperience
+          .section
+            .section-title
+              span.section-icon 🎓
+              | Background Information
+            .info-grid
+              .info-item.full-width
+                .info-label Previous Tutoring Experience
+                .info-value #{previousExperience}
+        
+        .action-buttons
+          a.btn.btn-primary(href="tel:#{phone}") 📞 Call Now
+          a.btn.btn-secondary(href="mailto:#{email}") ✉️ Send Email
+      
+      .footer
+        .status-badge.priority-high Pending Schedule
+        p Quick response increases enrollment probability by 70%
+        p Recommended: Call within 2 hours, schedule within 24 hours
+        .timestamp Requested on: #{new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'medium' })}

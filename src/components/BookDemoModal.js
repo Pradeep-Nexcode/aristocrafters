@@ -80,11 +80,41 @@ const BookDemoModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    setIsSubmitting(false);
-    setSubmitted(true);
+    try {
+      // Prepare form data for API
+      const demoData = {
+        name: formData.studentName,
+        email: formData.email,
+        phone: formData.phone,
+        grade: formData.grade,
+        subject: formData.subject,
+        preferredDate: formData.preferredDate,
+        preferredTime: formData.preferredTime,
+        message: formData.message || ''
+      };
+      
+      // Send to Nodemailer API
+      const response = await fetch('/api/book-demo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(demoData),
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        setIsSubmitting(false);
+        setSubmitted(true);
+      } else {
+        throw new Error(result.message || 'Demo booking failed');
+      }
+    } catch (error) {
+      console.error('Demo Booking Error:', error);
+      setIsSubmitting(false);
+      alert('There was an error booking your demo class. Please try again or contact us directly.');
+    }
   };
 
   const resetForm = () => {

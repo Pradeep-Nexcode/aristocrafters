@@ -35,7 +35,7 @@ const FAQSection = () => {
     {
       id: 6,
       question: "What curriculum do you follow?",
-      answer: "We cover State, CBSE, and ICSE curriculum to meet diverse student needs."
+      answer: "We cover State, CBSE, ICSE and Cambridge curriculum to meet diverse student needs."
     }
   ];
 
