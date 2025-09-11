@@ -216,9 +216,10 @@ html(lang="en")
             .info-item
               .info-label Grade/Class
               .info-value #{grade}
-            .info-item
-              .info-label Current School
-              .info-value #{school || 'Not specified'}
+            if school
+              .info-item
+                .info-label Current School
+                .info-value #{school}
         
         .section
           .section-title
@@ -247,7 +248,7 @@ html(lang="en")
                 .info-label Additional Notes
                 .info-value #{specificRequirements}
         
-        if previousExperience
+        if previousExperience && previousExperience.trim()
           .section
             .section-title
               span.section-icon 🎓

@@ -2,132 +2,120 @@ doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Contact Form Submission
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title New Contact Form Submission
     style.
-      * {
+      body {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
+        background: #f4f6f8;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: #333;
-        background-color: #f4f4f4;
       }
       .container {
         max-width: 600px;
-        margin: 20px auto;
+        margin: 30px auto;
         background: #ffffff;
         border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
         overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       }
       .header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        background: linear-gradient(135deg, #4e54c8, #8f94fb);
         padding: 30px;
         text-align: center;
+        color: #fff;
       }
       .header h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
+        font-size: 26px;
+        margin: 0;
       }
       .header p {
-        font-size: 16px;
+        margin: 8px 0 0;
+        font-size: 14px;
         opacity: 0.9;
       }
       .content {
-        padding: 40px 30px;
+        padding: 30px;
       }
       .field-group {
-        margin-bottom: 25px;
-        padding: 20px;
-        background: #f8f9fa;
-        border-radius: 8px;
-        border-left: 4px solid #667eea;
+        margin-bottom: 20px;
       }
       .field-label {
-        font-weight: 600;
-        color: #667eea;
-        font-size: 14px;
+        font-size: 12px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        margin-bottom: 8px;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 6px;
       }
       .field-value {
-        font-size: 16px;
-        color: #333;
-        word-wrap: break-word;
+        background: #f8f9fa;
+        border-radius: 6px;
+        padding: 12px 15px;
+        font-size: 15px;
+        line-height: 1.5;
       }
       .message-box {
-        background: #fff;
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        padding: 20px;
-        margin-top: 10px;
+        background: #fff9f0;
+        border: 1px solid #ffe0b2;
+        border-radius: 6px;
+        padding: 15px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #444;
+      }
+      .cta {
+        text-align: center;
+        margin: 30px 0;
+      }
+      .cta a {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #4e54c8;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: bold;
       }
       .footer {
-        background: #f8f9fa;
-        padding: 25px 30px;
+        background: #f4f6f8;
         text-align: center;
-        border-top: 1px solid #e9ecef;
-      }
-      .footer p {
-        color: #6c757d;
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-      .timestamp {
-        color: #adb5bd;
+        padding: 20px;
         font-size: 12px;
-        font-style: italic;
-      }
-      .priority-badge {
-        display: inline-block;
-        background: #dc3545;
-        color: white;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-left: 10px;
+        color: #777;
+        border-top: 1px solid #e0e0e0;
       }
   body
     .container
+      // Header
       .header
-        h1 📧 New Contact Form Submission
-        p A new inquiry has been received from your website
-        if priority === 'urgent'
-          span.priority-badge URGENT
+        h1 📩 New Contact Form Submission
+        p You've received a new inquiry from your website
       
+      // Content
       .content
         .field-group
-          .field-label Personal Information
-          .field-value
-            strong Name: #{name}
-            br
-            strong Email: #{email}
-            br
-            strong Phone: #{phone || 'Not provided'}
-        
+          .field-label Name
+          .field-value #{name}
+        .field-group
+          .field-label Email
+          .field-value #{email}
+        .field-group
+          .field-label Phone
+          .field-value #{phone}
         .field-group
           .field-label Subject
           .field-value #{subject}
-        
         .field-group
           .field-label Message
-          .message-box
-            .field-value #{message}
+          .message-box #{message}
         
-        if additionalInfo
-          .field-group
-            .field-label Additional Information
-            .field-value #{additionalInfo}
+        .cta
+          a(href=`mailto:${email}`) Reply to #{name}
       
+      // Footer
       .footer
-        p This email was sent from the contact form on your website.
-        p Please respond to the customer within 24 hours for best service.
-        .timestamp Received on: #{new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'medium' })}
+        p This email was automatically generated from your website's contact form.
+        p Please respond within 24 hours for the best customer experience.

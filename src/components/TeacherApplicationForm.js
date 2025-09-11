@@ -80,27 +80,28 @@ const TeacherApplicationForm = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     
     try {
-      // Prepare form data for API
-      const applicationData = {
-        name: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        qualification: 'Not specified', // Add qualification field if needed
-        experience: formData.experience,
-        subjects: formData.subjects,
-        preferredMode: formData.mode,
-        availability: formData.classes.join(', '),
-        expectedSalary: 'Not specified', // Add salary field if needed
-        additionalInfo: formData.resume ? `Resume uploaded: ${formData.resume.name}` : 'No resume uploaded'
-      };
+      // Prepare form data for API with file upload
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.fullName);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('qualification', 'Not specified');
+      formDataToSend.append('experience', formData.experience);
+      formDataToSend.append('subjects', JSON.stringify(formData.subjects));
+      formDataToSend.append('preferredMode', formData.mode);
+      formDataToSend.append('availability', formData.classes.join(', '));
+      formDataToSend.append('expectedSalary', 'Not specified');
+      formDataToSend.append('additionalInfo', 'Teacher application with resume');
+      
+      // Add resume file if present
+      if (formData.resume) {
+        formDataToSend.append('resume', formData.resume);
+      }
       
       // Send to Nodemailer API
       const response = await fetch('/api/teacher-application', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(applicationData),
+        body: formDataToSend, // Remove Content-Type header to let browser set it with boundary
       });
       
       const result = await response.json();
