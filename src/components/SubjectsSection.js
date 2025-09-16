@@ -48,12 +48,12 @@ const SubjectsSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     try {
-      const response = await fetch('/api/custom-subject-request', {
-        method: 'POST',
+      const response = await fetch("/api/custom-subject-request", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -61,7 +61,9 @@ const SubjectsSection = () => {
       const result = await response.json();
 
       if (response.ok) {
-        alert("Thank you! We will contact you soon regarding your custom subject request.");
+        alert(
+          "Thank you! We will contact you soon regarding your custom subject request."
+        );
         setIsModalOpen(false);
         setFormData({
           name: "",
@@ -76,7 +78,7 @@ const SubjectsSection = () => {
         alert(result.message || "Something went wrong. Please try again.");
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
       alert("Network error. Please check your connection and try again.");
     } finally {
       setIsLoading(false);
@@ -255,6 +257,7 @@ const SubjectsSection = () => {
                 const colorClasses = getColorClasses(subject.color);
                 return (
                   <motion.div
+                    id={subject.slug}
                     key={index}
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -339,6 +342,7 @@ const SubjectsSection = () => {
                 const colorClasses = getColorClasses(subject.color);
                 return (
                   <motion.div
+                    id={subject.slug}
                     key={index + 4}
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}

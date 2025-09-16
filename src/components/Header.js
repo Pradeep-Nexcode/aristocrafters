@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { FaHome, FaBook, FaPhone } from "react-icons/fa";
 import StudentRegistrationForm from "./StudentRegistrationForm";
 import TeacherApplicationForm from "./TeacherApplicationForm";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +21,9 @@ const Header = () => {
         setTimeout(() => {
           const element = document.querySelector(hash);
           if (element) {
-            element.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start'
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
           }
         }, 100);
@@ -33,10 +34,10 @@ const Header = () => {
     handleHashNavigation();
 
     // Handle hash changes
-    window.addEventListener('hashchange', handleHashNavigation);
-    
+    window.addEventListener("hashchange", handleHashNavigation);
+
     return () => {
-      window.removeEventListener('hashchange', handleHashNavigation);
+      window.removeEventListener("hashchange", handleHashNavigation);
     };
   }, []);
 
@@ -59,12 +60,23 @@ const Header = () => {
               href="/"
               className="flex items-center space-x-3 cursor-pointer"
             >
-              <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+              {/* <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AC</span>
               </div>
               <div>
                 <h1 className="text-xl font-bold text-black">AristoCrafters</h1>
                 <p className="text-sm text-gray-600">Excellence in Education</p>
+              </div> */}
+              <div className="relative w-full max-w-[120px] lg:py-2 lg:max-w-[200px] h-auto">
+                <Image
+                  src="/aristocrafters-logo.png"
+                  alt="AristoCrafters"
+                  layout="responsive"
+                  width={100}
+                  height={70}
+                  className="h-auto w-full object-contain"
+                  priority
+                />
               </div>
             </Link>
 
@@ -93,9 +105,8 @@ const Header = () => {
                 FAQ
               </Link>
               <button
-                onClick={() => setIsTeacherModalOpen(true)} 
+                onClick={() => setIsTeacherModalOpen(true)}
                 className="text-black hover:text-gray-600 font-medium transition-colors duration-200"
-
               >
                 Apply as Teacher
               </button>
@@ -202,7 +213,6 @@ const Header = () => {
                 >
                   Apply as Teacher
                 </button>
-
 
                 {/* Mobile Contact Info */}
                 <div className="pt-4 mt-4 border-t border-gray-200">
