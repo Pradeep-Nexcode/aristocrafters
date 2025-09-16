@@ -1,60 +1,60 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 import { CiFaceSmile } from "react-icons/ci";
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
-
+import Image from "next/image";
 const Footer = () => {
   const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Our Subjects', href: '/#subjects' },
-    { name: 'Why Choose Us', href: '/about#why-choose-us' },
-    { name: 'Feedback', href: '/#feedback' }
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
+    { name: "Our Subjects", href: "/#subjects" },
+    { name: "Why Choose Us", href: "/about#why-choose-us" },
+    { name: "Feedback", href: "/#feedback" },
   ];
 
   const subjects = [
-    { name: 'Tamil', href: '/#subjects' },
-    { name: 'Mathematics', href: '/#subjects' },
-    { name: 'English', href: '/#subjects' },
-    { name: 'Science', href: '/#subjects' },
-    { name: 'Social Science', href: '/#subjects' },
-    { name: 'Hindi', href: '/#subjects' },
-    { name: "Sanskrit", href: '/#subjects' }
+    { name: "Tamil", href: "/#tamil" },
+    { name: "Mathematics", href: "/#mathematics" },
+    { name: "English", href: "/#english" },
+    { name: "Science", href: "/#science" },
+    { name: "Social Science", href: "/#social-science" },
+    { name: "Hindi", href: "/#hindi" },
+    { name: "Sanskrit", href: "/#sanskrit" },
   ];
 
   const resources = [
-    { name: 'Study Materials', href: '/#subjects' },
-    { name: 'Practice Tests', href: '/#subjects' },
-    { name: 'Video Lectures', href: '/#subjects' },
-    { name: 'Assignment Help', href: '/contact' },
-    { name: 'Exam Preparation', href: '/#subjects' }
+    { name: "Study Materials", href: "/#subjects" },
+    { name: "Practice Tests", href: "/#subjects" },
+    { name: "Video Lectures", href: "/#subjects" },
+    { name: "Assignment Help", href: "/contact" },
+    { name: "Exam Preparation", href: "/#subjects" },
   ];
 
- const socialLinks = [
-  {
-    name: 'Facebook',
-    href: 'https://facebook.com/yourpage',
-    icon: <FaFacebook className="text-xl" />
-  },
-  {
-    name: 'Instagram',
-    href: 'https://instagram.com/yourpage',
-    icon: <FaInstagram   className="text-xl" />
-  },
-  {
-    name: 'YouTube',
-    href: 'https://youtube.com/yourchannel',
-    icon: <FaYoutube  className="text-xl" />
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com/in/yourprofile',
-    icon: <FaLinkedin  className="text-xl"  />
-  }
-];
+  const socialLinks = [
+    {
+      name: "Facebook",
+      href: "https://facebook.com/yourpage",
+      icon: <FaFacebook className="text-xl" />,
+    },
+    {
+      name: "Instagram",
+      href: "https://instagram.com/yourpage",
+      icon: <FaInstagram className="text-xl" />,
+    },
+    {
+      name: "YouTube",
+      href: "https://youtube.com/yourchannel",
+      icon: <FaYoutube className="text-xl" />,
+    },
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/in/yourprofile",
+      icon: <FaLinkedin className="text-xl" />,
+    },
+  ];
 
-return (
+  return (
     <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -78,18 +78,39 @@ return (
                   <p className="text-gray-300 text-sm">Excellence in Education</p>
                 </div>
               </div>
-              
+              {/* <Link
+                href="/"
+                className="flex items-start justify-start  cursor-pointer"
+              >
+                <div className="relative w-full max-w-[120px] lg:py-2 lg:max-w-[200px] h-auto">
+                  <Image
+                    src="/aristocrafters-logo.png"
+                    alt="AristoCrafters"
+                    layout="responsive"
+                    width={100}
+                    height={70}
+                    className="h-auto w-full object-contain"
+                    priority
+                  />
+                </div>
+              </Link> */}
+
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Empowering students to achieve academic excellence through personalized tutoring, 
-                innovative teaching methods, and dedicated support. Join thousands of successful students 
-                who have transformed their academic journey with us.
+                Empowering students to achieve academic excellence through
+                personalized tutoring, innovative teaching methods, and
+                dedicated support. Join thousands of successful students who
+                have transformed their academic journey with us.
               </p>
-              
+
               {/* Contact Info */}
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
@@ -98,10 +119,14 @@ return (
                     <p className="text-gray-400 text-sm">Call us anytime</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
@@ -111,7 +136,7 @@ return (
                     <p className="text-gray-400 text-sm">Send us an email</p>
                   </div>
                 </div>
-                
+
                 {/* <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -132,8 +157,8 @@ return (
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <Link 
-                      href={link.href} 
+                    <Link
+                      href={link.href}
                       className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -150,8 +175,8 @@ return (
               <ul className="space-y-3">
                 {subjects.map((subject) => (
                   <li key={subject.name}>
-                    <Link 
-                      href={subject.href} 
+                    <Link
+                      href={subject.href}
                       className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -168,16 +193,14 @@ return (
               <ul className="space-y-3">
                 {resources.map((resource) => (
                   <li key={resource.name}>
-                    <p 
-                      className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 flex items-center group"
-                    >
+                    <p className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 flex items-center group">
                       <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {resource.name}
                     </p>
                   </li>
                 ))}
               </ul>
-              
+
               {/* Newsletter Signup */}
               {/* <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
                 <div className="text-center">
@@ -203,23 +226,25 @@ return (
         <div className="py-8 border-t border-white/20">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             {/* Social Media */}
-             <div>
-      <h4 className="text-lg font-bold mb-4 text-center lg:text-left">Follow Us</h4>
-      <div className="flex justify-center lg:justify-start space-x-4">
-        {socialLinks.map((social) => (
-          <a
-            key={social.name}
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
-            aria-label={social.name}
-          >
-            {social.icon}
-          </a>
-        ))}
-      </div>
-    </div>
+            <div>
+              <h4 className="text-lg font-bold mb-4 text-center lg:text-left">
+                Follow Us
+              </h4>
+              <div className="flex justify-center lg:justify-start space-x-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
 
             {/* Awards & Certifications */}
             {/* <div className="text-center lg:text-right">
@@ -261,21 +286,34 @@ return (
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             <div className="text-center lg:text-left">
               <p className="text-gray-400 text-sm">
-                © 2024 AristoCrafters. All rights reserved. | 
-                <a href="#" className="hover:text-yellow-400 transition-colors duration-300 ml-1">Privacy Policy</a> | 
-                <a href="#" className="hover:text-yellow-400 transition-colors duration-300 ml-1">Terms of Service</a>
+                © 2024 AristoCrafters. All rights reserved. |
+                <a
+                  href="#"
+                  className="hover:text-yellow-400 transition-colors duration-300 ml-1"
+                >
+                  Privacy Policy
+                </a>{" "}
+                |
+                <a
+                  href="#"
+                  className="hover:text-yellow-400 transition-colors duration-300 ml-1"
+                >
+                  Terms of Service
+                </a>
               </p>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <span className="text-gray-400 text-sm">Powered by</span>
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
                   <span className="text-gray-900 font-bold text-md">
-                    <CiFaceSmile className="text-xl"/>
+                    <CiFaceSmile className="text-xl" />
                   </span>
                 </div>
-                <span className="text-white font-medium text-sm">Truelyzer</span>
+                <span className="text-white font-medium text-sm">
+                  Truelyzer
+                </span>
               </div>
             </div>
           </div>
