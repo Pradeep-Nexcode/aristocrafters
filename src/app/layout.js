@@ -4,25 +4,27 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const poppins = Poppins({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-  display: 'swap',
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
 });
 
 const nunito = Nunito({
-  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  variable: '--font-nunito',
-  display: 'swap',
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  display: "swap",
 });
 
 export const metadata = {
   title: "AristoCrafters - Excellence in Education | Best Tuition Center",
-  description: "Transform your child's academic future with AristoCrafters. Personalized tutoring, expert teachers, and proven results. Book your free demo session today!",
-  keywords: "tuition center, online tutoring, academic excellence, personalized learning, mathematics, science, english, exam preparation",
+  description:
+    "Transform your child's academic future with AristoCrafters. Personalized tutoring, expert teachers, and proven results. Book your free demo session today!",
+  keywords:
+    "tuition center, online tutoring, academic excellence, personalized learning, mathematics, science, english, exam preparation",
   author: "AristoCrafters Education",
   viewport: "width=device-width, initial-scale=1",
 };
@@ -30,16 +32,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
       <head>
+        <meta
+          name="google-site-verification"
+          content="_YCM4v9hV7nClVfuJ971i2lDZPEGfzoMYlnTGyveYMM"
+        />
       </head>
-      <body
-        className={`${poppins.variable} ${nunito.variable}`}
-      >
+      <body className={`${poppins.variable} ${nunito.variable}`}>
         <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
