@@ -322,7 +322,7 @@ const ContactPage = () => {
                     {
                       icon: <FaPhone />,
                       title: 'Call Us',
-                      info: '+91 98765 43210',
+                      info: '+91 93601 39254',
                       subInfo: 'Mon - Sat: 9:00 AM - 8:00 PM',
                       color: 'from-green-500 to-blue-600',
                       action: 'Call Now'
@@ -330,7 +330,7 @@ const ContactPage = () => {
                     {
                       icon: <FaEnvelope />,
                       title: 'Email Us',
-                      info: 'info@aristocrafters.com',
+                      info: 'aristocrafters2025@gmail.com',
                       subInfo: 'We reply within 2 hours',
                       color: 'from-purple-500 to-pink-600',
                       action: 'Send Email'
@@ -338,7 +338,7 @@ const ContactPage = () => {
                     {
                       icon: <FaComments />,
                       title: 'WhatsApp',
-                      info: '+91 98765 43210',
+                      info: '+91 93601 39254',
                       subInfo: 'Quick support & updates',
                       color: 'from-green-400 to-green-600',
                       action: 'Chat Now'
@@ -399,17 +399,17 @@ const ContactPage = () => {
                   
                   <div className="grid grid-cols-2 gap-4">
                     {[
-                      { name: 'Facebook', icon: <FaFacebook />, color: 'from-blue-500 to-blue-600' },
-                      { name: 'Instagram', icon: <FaInstagram />, color: 'from-pink-500 to-purple-600' },
-                      { name: 'YouTube', icon: <FaYoutube />, color: 'from-red-500 to-red-600' },
-                      { name: 'LinkedIn', icon: <FaLinkedin />, color: 'from-blue-600 to-blue-700' }
+                      // { name: 'Facebook', icon: <FaFacebook />, color: 'from-blue-500 to-blue-600',  },
+                      { name: 'Instagram', icon: <FaInstagram />, color: 'from-pink-500 to-purple-600' , link: 'https://www.instagram.com/aristocrafters2' },
+                      // { name: 'YouTube', icon: <FaYoutube />, color: 'from-red-500 to-red-600' },
+                      // { name: 'LinkedIn', icon: <FaLinkedin />, color: 'from-blue-600 to-blue-700' }
                     ].map((social, index) => (
-                      <button key={index} className="group flex items-center space-x-3 p-3 bg-white/60 backdrop-blur-sm rounded-xl hover:bg-white/80 transition-all duration-300 hover:scale-105">
+                      <a href={social.link} target='_blank' key={index} className="group flex items-center space-x-3 p-3 bg-white/60 backdrop-blur-sm rounded-xl hover:bg-white/80 transition-all duration-300 hover:scale-105">
                         <div className={`w-8 h-8 bg-gradient-to-br ${social.color} rounded-lg flex items-center justify-center text-sm group-hover:scale-110 transition-all duration-300`}>
                           {social.icon}
                         </div>
                         <span className="text-sm font-semibold text-gray-700">{social.name}</span>
-                      </button>
+                      </a>
                     ))}
                   </div>
                 </div>
