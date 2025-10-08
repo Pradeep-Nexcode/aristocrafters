@@ -39,7 +39,7 @@ const Footer = () => {
     },
     {
       name: "Instagram",
-      href: "https://instagram.com/yourpage",
+      href: "https://www.instagram.com/aristocrafters2",
       icon: <FaInstagram className="text-xl" />,
     },
     {
@@ -115,7 +115,7 @@ const Footer = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium">+91 96778 93974</p>
+                    <p className="font-medium">+91 93601 39254</p>
                     <p className="text-gray-400 text-sm">Call us anytime</p>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ const Footer = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium">info@aristocrafters.com</p>
+                    <p className="font-medium">aristocrafters2025@gmail.com</p>
                     <p className="text-gray-400 text-sm">Send us an email</p>
                   </div>
                 </div>
